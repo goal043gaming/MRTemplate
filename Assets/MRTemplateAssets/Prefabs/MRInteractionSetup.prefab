@@ -1057,9 +1057,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1b43369ab94964682260e5f36655b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPrefab: {fileID: 817434274495989452, guid: 041059be4be1d374bade818899680a8e, type: 3}
+  spawnPrefab: {fileID: 3377362064105211173, guid: da258dfca7f103541b13797d0f19522c, type: 3}
   rayInteractor: {fileID: 819876874303596726}
   anchorManager: {fileID: 4948252747847488336}
+  planeManager: {fileID: 0}
+  planeClassification: 0
 --- !u!1 &5051522684737032414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,7 +1083,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7202474793540215142
 Transform:
   m_ObjectHideFlags: 0
@@ -1732,6 +1734,8 @@ MonoBehaviour:
   spawnPrefab: {fileID: 817434274495989452, guid: 041059be4be1d374bade818899680a8e, type: 3}
   rayInteractor: {fileID: 8788577609884148428}
   anchorManager: {fileID: 4948252747847488336}
+  planeManager: {fileID: 0}
+  planeClassification: 0
 --- !u!1 &5237996502423667264
 GameObject:
   m_ObjectHideFlags: 0
@@ -3603,7 +3607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f72f46632c786409507b48ca7db659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubePrefab: {fileID: 1799767201191333574, guid: 8dd7cc6055503e5419323a971abeb452, type: 3}
+  cubePrefab: {fileID: 7650098398599213038, guid: a9ffa9f8189e9bb45805ca57598d7669, type: 3}
   speed: 3
   input:
     m_UseReference: 1
