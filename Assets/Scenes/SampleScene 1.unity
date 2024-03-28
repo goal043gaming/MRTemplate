@@ -1428,17 +1428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0cb9aa70a22847b5925ee5f067c10a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1358952314 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2074947109, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
-  m_PrefabInstance: {fileID: 1109407790274764219}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1364055689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2588,18 +2577,6 @@ PrefabInstance:
     - target: {fileID: 6880324381277293900, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7912451448793228917, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
-      propertyPath: planeManager
-      value: 
-      objectReference: {fileID: 1358952314}
-    - target: {fileID: 7912451448793228917, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
-      propertyPath: spawnPreview
-      value: 
-      objectReference: {fileID: 3377362064105211173, guid: b96dd495c89d70a4aa16d025cabf3b84, type: 3}
-    - target: {fileID: 7912451448793228917, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
-      propertyPath: planeClassification
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -9,7 +9,7 @@ using System;
 public class SpawnAnchor : MonoBehaviour
 {
     [Header("Prefab to spawn")]
-    public GameObject spawnPreview;
+    //public GameObject spawnPreview;
     public GameObject spawnPrefab;
 
     private GameObject preview;
@@ -47,10 +47,10 @@ public class SpawnAnchor : MonoBehaviour
 
     private void Update()
     {
-        if (!used)
+       /* if (!used)
         {
-            //Placing();
-        }
+            Placing();
+        } */
     }
 
     void Placing()

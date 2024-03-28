@@ -1060,8 +1060,8 @@ MonoBehaviour:
   spawnPrefab: {fileID: 3377362064105211173, guid: da258dfca7f103541b13797d0f19522c, type: 3}
   rayInteractor: {fileID: 819876874303596726}
   anchorManager: {fileID: 4948252747847488336}
-  planeManager: {fileID: 0}
-  planeClassification: 0
+  planeManager: {fileID: 2074947109}
+  planeClassification: 1
 --- !u!1 &5051522684737032414
 GameObject:
   m_ObjectHideFlags: 0
@@ -2821,6 +2821,10 @@ PrefabInstance:
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 1318489356476006503, guid: 5eccbf4be2c00e94689ee8062e4e7276, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1869842856703731449, guid: 5eccbf4be2c00e94689ee8062e4e7276, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3406,6 +3410,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8733093507751517971, guid: 5eccbf4be2c00e94689ee8062e4e7276, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4948252747847488336}
+    - targetCorrespondingSourceObject: {fileID: 8733093507751517971, guid: 5eccbf4be2c00e94689ee8062e4e7276, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3655493459598823796}
     - targetCorrespondingSourceObject: {fileID: 7990873191231833679, guid: 5eccbf4be2c00e94689ee8062e4e7276, type: 3}
       insertIndex: -1
       addedObject: {fileID: 248358153}
@@ -3658,7 +3665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlanePrefab: {fileID: 5982963534685165758, guid: b08aa487cadd25e48bd9a7c9c00d7680, type: 3}
+  m_PlanePrefab: {fileID: 3636682289771902827, guid: fbed596f4093d064da46c76642b0e440, type: 3}
   m_DetectionMode: -1
 --- !u!114 &4948252747847488336
 MonoBehaviour:
@@ -3673,6 +3680,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AnchorPrefab: {fileID: 0}
+--- !u!114 &3655493459598823796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8527362242434426454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67621e45641c63c48bb07a62a816fca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planeManager: {fileID: 2074947109}
+  planeClassification: 01000000020000000300000004000000
+  planeMaterial:
+  - {fileID: 2100000, guid: d5ea9c4d1709ee64d8abed80a5bfa1db, type: 2}
+  - {fileID: 2100000, guid: 22c4905ed3051bd4cae0c75c2b008486, type: 2}
+  - {fileID: 2100000, guid: 4ec012cffe3cb3045971aeda482bd6e0, type: 2}
+  - {fileID: 2100000, guid: 9c4194d50212d204a8bd8e4a1b7961b6, type: 2}
 --- !u!4 &8536388935059301681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8724088221210090612, guid: 5eccbf4be2c00e94689ee8062e4e7276, type: 3}
