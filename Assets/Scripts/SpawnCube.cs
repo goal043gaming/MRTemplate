@@ -14,9 +14,14 @@ public class SpawnCube : MonoBehaviour
     {
         if(input.action.WasPressedThisFrame())
         {
-            GameObject spawnedCube = Instantiate(cubePrefab,transform.position, transform.rotation);
-            Rigidbody rb = spawnedCube.GetComponent<Rigidbody>();
-            rb.velocity = transform.forward * speed;
+            Spawn();
         }
+    }
+
+    public void Spawn()
+    {
+        GameObject spawnedCube = Instantiate(cubePrefab, transform.position, transform.rotation);
+        Rigidbody rb = spawnedCube.GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * speed;
     }
 }
