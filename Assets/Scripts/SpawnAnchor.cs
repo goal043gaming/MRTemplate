@@ -9,7 +9,10 @@ using System;
 public class SpawnAnchor : MonoBehaviour
 {
     [Header("Prefab to spawn")]
+    public GameObject spawnPreview;
     public GameObject spawnPrefab;
+
+    private GameObject preview;
 
     [Header("Objects to link")]
     public XRRayInteractor rayInteractor;
@@ -25,19 +28,39 @@ public class SpawnAnchor : MonoBehaviour
     {
         rayInteractor.selectEntered.AddListener(Spawn);
 
-      /*  foreach(var plane in planeManager.trackables)
+        //preview = Instantiate(spawnPreview);
+
+        /*  foreach(var plane in planeManager.trackables)
+          {
+              if(plane.classification == planeClassification)
+              {
+                  Renderer rend = GetComponent<Renderer>();
+                  rend.material.color = Color.green;
+              }
+              else
+              {
+                  Renderer itemRenderer = plane.GetComponent<Renderer>();
+                  Destroy(itemRenderer);
+              }
+          } */
+    }
+
+    private void Update()
+    {
+        if (!used)
         {
-            if(plane.classification == planeClassification)
-            {
-                Renderer rend = GetComponent<Renderer>();
-                rend.material.color = Color.green;
-            }
-            else
-            {
-                Renderer itemRenderer = plane.GetComponent<Renderer>();
-                Destroy(itemRenderer);
-            }
-        } */
+            //Placing();
+        }
+    }
+
+    void Placing()
+    {
+        if (!used)
+        {
+            rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit spawnHit);
+
+            preview.transform.position = spawnHit.point;
+        }
     }
 
     public void Spawn(BaseInteractionEventArgs args)
