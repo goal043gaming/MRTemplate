@@ -12,7 +12,7 @@ public class SpawnAnchor : MonoBehaviour
     //public GameObject spawnPreview;
     public GameObject spawnPrefab;
 
-    private GameObject preview;
+    //private GameObject preview;
 
     [Header("Objects to link")]
     public XRRayInteractor rayInteractor;
@@ -20,8 +20,8 @@ public class SpawnAnchor : MonoBehaviour
 
     private bool used = false;
 
-    public ARPlaneManager planeManager;
-    public PlaneClassification planeClassification;
+    //public ARPlaneManager planeManager;
+    //public PlaneClassification planeClassification;
 
     // Start is called before the first frame update
     void Start()
@@ -53,15 +53,15 @@ public class SpawnAnchor : MonoBehaviour
         } */
     }
 
-    void Placing()
+  /*  void Placing()
     {
         if (!used)
         {
             rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit spawnHit);
 
-            preview.transform.position = spawnHit.point;
+            //preview.transform.position = spawnHit.point;
         }
-    }
+    } */
 
     public void Spawn(BaseInteractionEventArgs args)
     {
