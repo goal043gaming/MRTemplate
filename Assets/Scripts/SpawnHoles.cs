@@ -32,10 +32,11 @@ public class SpawnHoles : MonoBehaviour
 
             Instantiate(prefabToSpawn, hitpose.position, hitpose.rotation);
             amountUsed++;
+
         }
-        else
+        if(amountUsed >= prefabAmount)
         {
-            
+            rayInteractor.gameObject.SetActive(false);
         }
     }
 }
