@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2752504702304419374}
   - component: {fileID: 695363556891176207}
   - component: {fileID: 3936630831624102678}
+  - component: {fileID: 641727292439096881}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Throwable
@@ -286,3 +287,17 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &641727292439096881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7650098398599213038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902e508784c51bd4db96bc6c60b8349c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boosterAmount: 2
+  boosterTriggered: 0

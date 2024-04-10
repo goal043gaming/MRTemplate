@@ -13,25 +13,21 @@ public class HoleDetection : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Throwable")
-        {
-            text.gameObject.SetActive(true);
-            text.text = pointAmount.ToString();
-            StartCoroutine(TextTimer(3));
-            Destroy(collision.gameObject);
-
-            /*
+        { 
             if (collision.gameObject.GetComponent<BallBoosters>().boosterTriggered == true)
             {
-                Destroy(collision.gameObject);
+                text.gameObject.SetActive(true);
+                StartCoroutine(TextTimer(1));
                 pointAmount *= collision.gameObject.GetComponent<BallBoosters>().boosterAmount;
                 text.text = pointAmount.ToString();
-            } */
+                Destroy(collision.gameObject);
+            } 
         }
     }
 
     private void OnEnable()
     {
-        //Instantiate(pointBooster, transform.position+(transform.forward*2), transform.rotation);
+        Instantiate(pointBooster, transform.position+(-transform.forward*1), transform.rotation);
         text.gameObject.SetActive(false);
     }
 
