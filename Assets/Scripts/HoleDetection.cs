@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class HoleDetection : MonoBehaviour
 {
+    [SerializeField] GameObject pointBooster;
 
     [SerializeField] int pointAmount;
     [SerializeField] TMP_Text text;
@@ -13,8 +14,17 @@ public class HoleDetection : MonoBehaviour
     {
         if(collision.transform.tag == "Throwable")
         {
-            Destroy(collision.gameObject);
-            text.text = pointAmount.ToString();
+            if (collision.gameObject.GetComponent<BallBoosters>().boosterTriggered == true)
+            {
+                Destroy(collision.gameObject);
+                pointAmount *= collision.gameObject.GetComponent<BallBoosters>().boosterAmount;
+                text.text = pointAmount.ToString();
+            }
         }
+    }
+
+    private void OnEnable()
+    {
+        Instantiate(pointBooster, transform.position+(transform.forward*2), transform.rotation);
     }
 }
