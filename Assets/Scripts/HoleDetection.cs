@@ -14,6 +14,8 @@ public class HoleDetection : MonoBehaviour
     [SerializeField] TMP_Text text;
     [SerializeField] AudioSource audioClip;
 
+    private AnswerManager answerManager;
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag == "Throwable")
@@ -27,6 +29,8 @@ public class HoleDetection : MonoBehaviour
                 //startingPoints = startingPoints * collision.gameObject.GetComponent<BallBoosters>().boosterAmount;
                 text.text = pointsToAdd.ToString();
                 Destroy(collision.gameObject);
+
+                answerManager.Answer();
             }
             else
             {
@@ -34,6 +38,8 @@ public class HoleDetection : MonoBehaviour
                 StartCoroutine(TextTimer(1));
                 text.text = startingPoints.ToString();
                 Destroy(collision.gameObject);
+
+                answerManager.Answer();
             }
         }
     }
@@ -44,6 +50,8 @@ public class HoleDetection : MonoBehaviour
         playerPos = GameObject.FindGameObjectWithTag("MainCamera");
         test.transform.LookAt(playerPos.transform.position);
         text.gameObject.SetActive(false);
+
+        answerManager = GetComponentInParent<AnswerManager>();
     }
 
     private IEnumerator TextTimer(int Timer)
