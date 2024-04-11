@@ -12,8 +12,10 @@ public class SpawnHoles : MonoBehaviour
     [SerializeField] XRRayInteractor rayInteractor;
     [SerializeField] ARAnchorManager anchorManager;
 
-    [SerializeField] int prefabAmount = 3;
+    [SerializeField] int prefabAmount = 4;
     private int amountUsed = 0;
+
+    private HoleAssignment holeNames;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,8 @@ public class SpawnHoles : MonoBehaviour
         if(amountUsed >= prefabAmount)
         {
             rayInteractor.gameObject.SetActive(false);
+            holeNames = GetComponentInParent<HoleAssignment>();
+            holeNames.AssignNumber();
         }
     }
 }

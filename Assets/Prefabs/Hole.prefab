@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1203926589857413167}
   - component: {fileID: 2317849688504503011}
+  - component: {fileID: 5457362232660892694}
   m_Layer: 0
   m_Name: Hole
   m_TagString: Untagged
@@ -130,6 +131,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5457362232660892694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816594211983487152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9070c02c63856f547bff05caec1aaa40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multipleChoice:
+  - A
+  - B
+  - C
+  - D
 --- !u!1 &2286509975979987837
 GameObject:
   m_ObjectHideFlags: 0
