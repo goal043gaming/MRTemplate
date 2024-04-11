@@ -20,7 +20,8 @@ public class HoleAssignment : MonoBehaviour
     {
         int index = Random.Range(0, multipleChoice.Count -1);
         selectedChoice = multipleChoice[index];
-        textField.text = selectedChoice;
+        //textField.text = "" + selectedChoice;
+        textField.text = "LOL";
 
         multipleChoice.Remove(selectedChoice);
     }

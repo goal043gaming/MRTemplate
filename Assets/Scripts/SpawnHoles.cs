@@ -7,15 +7,14 @@ using UnityEngine.XR.ARSubsystems;
 
 public class SpawnHoles : MonoBehaviour
 {
-    [SerializeField] GameObject prefabToSpawn;
+    [SerializeField] GameObject[] prefabToSpawn;
 
     [SerializeField] XRRayInteractor rayInteractor;
     [SerializeField] ARAnchorManager anchorManager;
 
     [SerializeField] int prefabAmount = 4;
     private int amountUsed = 0;
-
-    private HoleAssignment holeNames;
+    private int index = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -32,15 +31,20 @@ public class SpawnHoles : MonoBehaviour
 
             var result = anchorManager.AddAnchor(hitpose);
 
-            Instantiate(prefabToSpawn, hitpose.position, hitpose.rotation);
+            Instantiate(prefabToSpawn[index], hitpose.position, hitpose.rotation);
+            updatePrefab();
+
             amountUsed++;
 
         }
         if(amountUsed >= prefabAmount)
         {
             rayInteractor.gameObject.SetActive(false);
-            holeNames = GetComponentInParent<HoleAssignment>();
-            holeNames.AssignNumber();
         }
+    }
+
+    private void updatePrefab()
+    {
+        index++;
     }
 }
