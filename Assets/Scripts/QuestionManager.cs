@@ -14,6 +14,7 @@ public class QuestionManager : MonoBehaviour
     public void Start()
     {
         GenerateQuestion();
+        SetAnswers();
     }
 
     public void GenerateQuestion()
@@ -34,6 +35,7 @@ public class QuestionManager : MonoBehaviour
             if (qAHolder[currentQuestion].correctAnswer == i+1)
             {
                 options[i].GetComponent<AnswerManager>().isCorrect = true;
+                print(options[i] + "This is it");
             }
         }
     }

@@ -141,7 +141,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816594211983487152}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9070c02c63856f547bff05caec1aaa40, type: 3}
   m_Name: 
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d570604f8ca3dd41b8b01d8950622f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCorrect: 0
+  isCorrect: 1
   explosionW: {fileID: 3536513499617388698}
   explosionR: {fileID: 2792049790985147512}
   questionManager: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
@@ -815,8 +815,8 @@ VisualEffect:
   m_GameObject: {fileID: 8668247027023338088}
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 0ff56cf9e5c856a40bece63a15e475b6, type: 3}
-  m_InitialEventName: OnPlay
-  m_InitialEventNameOverriden: 0
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_AllowInstancing: 1
