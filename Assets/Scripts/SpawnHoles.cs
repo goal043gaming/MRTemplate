@@ -16,14 +16,12 @@ public class SpawnHoles : MonoBehaviour
     private int amountUsed = 0;
     private int index = 0;
 
-    private QuestionManager questionManager;
+    [SerializeField] QuestionManager questionManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rayInteractor.selectEntered.AddListener(spawnPrefab);
-
-        questionManager = GameObject.FindObjectOfType<QuestionManager>();
     }
 
     public void spawnPrefab(BaseInteractionEventArgs args)
@@ -36,8 +34,8 @@ public class SpawnHoles : MonoBehaviour
             var result = anchorManager.AddAnchor(hitpose);
 
             Instantiate(prefabToSpawn[index], hitpose.position, hitpose.rotation);
-            updatePrefab();
 
+            index++;
             amountUsed++;
 
         }
@@ -46,10 +44,5 @@ public class SpawnHoles : MonoBehaviour
             rayInteractor.gameObject.SetActive(false);
             questionManager.GenerateQuestion();
         }
-    }
-
-    private void updatePrefab()
-    {
-        index++;
     }
 }

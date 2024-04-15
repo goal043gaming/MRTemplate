@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1203926589857413167}
   - component: {fileID: 2317849688504503011}
-  - component: {fileID: 5457362232660892694}
   - component: {fileID: 2568390474683156675}
   m_Layer: 0
   m_Name: HoleC
-  m_TagString: Untagged
+  m_TagString: Spawned
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,23 +133,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5457362232660892694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1816594211983487152}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9070c02c63856f547bff05caec1aaa40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  multipleChoice:
-  - A
-  - B
-  - C
-  - D
 --- !u!114 &2568390474683156675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d570604f8ca3dd41b8b01d8950622f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCorrect: 0
+  isCorrect: 1
   explosionW: {fileID: 2709888577218309654}
   explosionR: {fileID: 3628910885978707370}
   questionManager: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}

@@ -24,12 +24,4 @@ public class AnswerManager : MonoBehaviour
             explosionW.Play();
         }
     }
-
-    public void Update()
-    {
-        if(isCorrect)
-        {
-            print("I AM CORRECT");
-        }
-    }
 }
