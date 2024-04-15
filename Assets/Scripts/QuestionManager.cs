@@ -8,6 +8,7 @@ public class QuestionManager : MonoBehaviour
 {
     [SerializeField] List<QnAHolder> qAHolder;
     [SerializeField] GameObject[] options;
+    [SerializeField] TMP_Text[] answerText;
     public int currentQuestion;
     [SerializeField] TMP_Text questionText;
 
@@ -24,6 +25,8 @@ public class QuestionManager : MonoBehaviour
         for(int i = 0; i < options.Length ; i++)
         {
             options[i].GetComponent<AnswerManager>().isCorrect = false;
+            answerText[i].text = qAHolder[currentQuestion].answers[i];
+            //answerText[i].GetComponent<TMP_Text>().text = qAHolder[currentQuestion].answers[i];
             //options[i].transform.GetChild(0).GetComponent<TMP_Text>().text = qAHolder[currentQuestion].answers[i];
 
             if (qAHolder[currentQuestion].correctAnswer == i+1)
