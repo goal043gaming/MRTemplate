@@ -730,6 +730,7 @@ MonoBehaviour:
   startingPoints: 100
   text: {fileID: 8103035771722274551}
   audioClip: {fileID: 2317849688504503011}
+  answerManager: {fileID: 1648166098463439459}
 --- !u!1 &7580881881784242853
 GameObject:
   m_ObjectHideFlags: 0

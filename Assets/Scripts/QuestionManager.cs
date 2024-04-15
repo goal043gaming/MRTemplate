@@ -12,6 +12,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] TMP_Text questionText;
 
     public int currentQuestion;
+    public bool t_Correct;
 
     public void Start()
     {
@@ -41,7 +42,21 @@ public class QuestionManager : MonoBehaviour
 
     public void Correct()
     {
-        //qAHolder.RemoveAt(currentQuestion);
-        //GenerateQuestion();
+        StartCoroutine(Correcto());
+    }
+
+    public IEnumerator Correcto()
+    {
+        yield return new WaitForSeconds(1);
+        qAHolder.RemoveAt(currentQuestion);
+        GenerateQuestion();
+    }
+
+    private void Update()
+    {
+        if(t_Correct)
+        {
+            Correct();
+        }
     }
 }
