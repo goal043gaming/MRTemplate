@@ -16,10 +16,14 @@ public class SpawnHoles : MonoBehaviour
     private int amountUsed = 0;
     private int index = 0;
 
+    private QuestionManager questionManager;
+
     // Start is called before the first frame update
     void Start()
     {
         rayInteractor.selectEntered.AddListener(spawnPrefab);
+
+        questionManager = GameObject.FindObjectOfType<QuestionManager>();
     }
 
     public void spawnPrefab(BaseInteractionEventArgs args)
@@ -40,6 +44,7 @@ public class SpawnHoles : MonoBehaviour
         if(amountUsed >= prefabAmount)
         {
             rayInteractor.gameObject.SetActive(false);
+            questionManager.GenerateQuestion();
         }
     }
 

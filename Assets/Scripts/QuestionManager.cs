@@ -11,12 +11,6 @@ public class QuestionManager : MonoBehaviour
     public int currentQuestion;
     [SerializeField] TMP_Text questionText;
 
-    public void Start()
-    {
-        GenerateQuestion();
-        SetAnswers();
-    }
-
     public void GenerateQuestion()
     {
         currentQuestion = Random.Range(0, qAHolder.Count);
@@ -42,7 +36,8 @@ public class QuestionManager : MonoBehaviour
 
     public void Correct()
     {
-        qAHolder.RemoveAt(currentQuestion);
-        GenerateQuestion();
+        // qAHolder.RemoveAt(currentQuestion);
+        // GenerateQuestion();
+        print("testing");
     }
 }
