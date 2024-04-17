@@ -33,7 +33,10 @@ public class SpawnHoles : MonoBehaviour
 
             var result = anchorManager.AddAnchor(hitpose);
 
-            Instantiate(prefabToSpawn[index], hitpose.position, hitpose.rotation);
+            //Instantiate(prefabToSpawn[index], hitpose.position, hitpose.rotation);
+            prefabToSpawn[index].SetActive(true);
+            prefabToSpawn[index].transform.position = hitpose.position;
+            prefabToSpawn[index].transform.rotation = hitpose.rotation;
 
             index++;
             amountUsed++;
