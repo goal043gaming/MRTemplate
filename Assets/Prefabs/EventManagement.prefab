@@ -45,25 +45,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   qAHolder:
-  - questions: Testing the question
+  - questions: Wat is het doel van de installatie?
     answers:
-    - Idk
-    - Yes
-    - LMao
-    - nop
+    - Spelen met water
+    - Naboosting van een proces zoals deze in het groot in de procesindustrie te
+      vinden is
+    - Kijken hoe snel je water kan verwarmen
+    - Het testen van verwarmingsketels
+    correctAnswer: 2
+  - questions: Waarvoor dient de verwarmingsketel F101 in deze loop?
+    answers:
+    - Druk te houden en zorgen voor voldoende doorstroming
+    - Het lokaal te verwarmen
+    - Te voorkomen dat het water bevriest
+    - Het water te verwarmen in loop 1.
     correctAnswer: 4
-  - questions: Testing the question again
-    answers:
-    - NO
-    - Surely not
-    - nope
-    - No way
-    correctAnswer: 1
   options:
-  - {fileID: 1816594211983487152, guid: d074f3cc3ae5a6249aeb5ad1a261aa11, type: 3}
-  - {fileID: 1816594211983487152, guid: 163488a22eef64444b6efa211a5e4128, type: 3}
-  - {fileID: 1816594211983487152, guid: 0f80b9a1de9df3c479140ba153f1e0cd, type: 3}
-  - {fileID: 1816594211983487152, guid: 257384b2c889ad34db0830e121e86d68, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   answerText:
   - {fileID: 0}
   - {fileID: 0}
@@ -71,3 +72,4 @@ MonoBehaviour:
   - {fileID: 0}
   questionText: {fileID: 0}
   currentQuestion: 0
+  t_Correct: 0
