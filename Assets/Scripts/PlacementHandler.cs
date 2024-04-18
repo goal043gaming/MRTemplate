@@ -18,6 +18,7 @@ public class PlacementHandler : MonoBehaviour
     private int amountToPlace;
     private GrabDetection grabDetection;
     private bool allowPlacement = false;
+    private int selectedObjectNumber;
     [SerializeField] TMP_Text textField;
 
     [SerializeField] int spheresToPlace;
@@ -83,12 +84,23 @@ public class PlacementHandler : MonoBehaviour
     {
         if(allowPlacement)
         {
-           lInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
+            if(amountToPlace <= 0)
+            {
+                allowPlacement = false;
+                textField.text = "You've placed all of the objects";
+            }
 
-           Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(-hit.normal));
-           anchorManager.AddAnchor(hitpose);
+            else
+            {
+                lInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
 
-           Instantiate(spawnPrefab, hitpose.position, hitpose.rotation);
+                Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(-hit.normal));
+                anchorManager.AddAnchor(hitpose);
+
+                Instantiate(spawnPrefab, hitpose.position, hitpose.rotation);
+
+                UpdateNumber();
+            }
         }
     }
 
@@ -99,6 +111,8 @@ public class PlacementHandler : MonoBehaviour
             amountToPlace = spheresToPlace;
             spawnPrefab = placeObjects[0];
 
+            selectedObjectNumber = 0;
+
             textField.text = "Objects to place: " + amountToPlace;
         }
         else if (currentObject.name == objectName2)
@@ -106,12 +120,16 @@ public class PlacementHandler : MonoBehaviour
             amountToPlace = cubesToPlace;
             spawnPrefab = placeObjects[1];
 
+            selectedObjectNumber = 1;
+
             textField.text = "Objects to place: " + amountToPlace;
         }
         else if (currentObject.name == objectName3)
         {
             amountToPlace = cylindersToPlace;
             spawnPrefab = placeObjects[2];
+
+            selectedObjectNumber = 2;
 
             textField.text = "Objects to place: " + amountToPlace;
         }
@@ -128,5 +146,26 @@ public class PlacementHandler : MonoBehaviour
         textField.text = "No Object selected";
         lInteractor.gameObject.SetActive(false);
         allowPlacement = false;
+    }
+
+    private void UpdateNumber()
+    {
+        if(selectedObjectNumber == 0)
+        {
+            spheresToPlace--;
+            amountToPlace--;
+        }
+        if (selectedObjectNumber == 1)
+        {
+            cubesToPlace--;
+            amountToPlace--;
+        }
+        if (selectedObjectNumber == 2)
+        {
+            cylindersToPlace--;
+            amountToPlace--;
+        }
+
+        textField.text = "Objects to place: " + amountToPlace;
     }
 }
