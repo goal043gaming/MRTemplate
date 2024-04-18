@@ -483,13 +483,16 @@ MonoBehaviour:
   - {fileID: 562697766}
   - {fileID: 1818126271}
   placeObjects:
-  - {fileID: 8921008}
   - {fileID: 1574963115}
+  - {fileID: 8921008}
   - {fileID: 1850247028}
   textField: {fileID: 1154961395}
   spheresToPlace: 3
   cubesToPlace: 5
   cylindersToPlace: 2
+  objectName1: Sphere
+  objectName2: Cube
+  objectName3: Cylinder
   lInteractor: {fileID: 1129836188}
   rInteractor: {fileID: 1312419035}
   anchorManager: {fileID: 1358952314}
@@ -1152,12 +1155,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 157572024}
+        m_TargetAssemblyTypeName: PlacementHandler, Assembly-CSharp
+        m_MethodName: ObjectGrabbed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 562697773}
         m_TargetAssemblyTypeName: GrabDetection, Assembly-CSharp
         m_MethodName: ObjectDropped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 157572024}
+        m_TargetAssemblyTypeName: PlacementHandler, Assembly-CSharp
+        m_MethodName: DroppedObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3416,7 +3443,7 @@ Transform:
   m_GameObject: {fileID: 1718692587}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.1555422, z: -0, w: 0.98782927}
-  m_LocalPosition: {x: 1.3970135, y: 0, z: 0.17088115}
+  m_LocalPosition: {x: 1.2490135, y: 0, z: -0.15911901}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3661,12 +3688,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 157572024}
+        m_TargetAssemblyTypeName: PlacementHandler, Assembly-CSharp
+        m_MethodName: ObjectGrabbed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1767017026}
         m_TargetAssemblyTypeName: GrabDetection, Assembly-CSharp
         m_MethodName: ObjectDropped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 157572024}
+        m_TargetAssemblyTypeName: PlacementHandler, Assembly-CSharp
+        m_MethodName: DroppedObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4126,12 +4177,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 157572024}
+        m_TargetAssemblyTypeName: PlacementHandler, Assembly-CSharp
+        m_MethodName: ObjectGrabbed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1818126278}
         m_TargetAssemblyTypeName: GrabDetection, Assembly-CSharp
         m_MethodName: ObjectDropped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 157572024}
+        m_TargetAssemblyTypeName: PlacementHandler, Assembly-CSharp
+        m_MethodName: DroppedObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5459,7 +5534,7 @@ Transform:
   m_GameObject: {fileID: 2135159485}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41, y: -1.7965279, z: 4.13}
+  m_LocalPosition: {x: 0.262, y: -1.7965279, z: 3.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

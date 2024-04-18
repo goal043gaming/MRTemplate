@@ -24,10 +24,18 @@ public class PlacementHandler : MonoBehaviour
     [SerializeField] int cubesToPlace;
     [SerializeField] int cylindersToPlace;
 
+    [SerializeField] string objectName1;
+    [SerializeField] string objectName2;
+    [SerializeField] string objectName3;
+
     [SerializeField] XRRayInteractor lInteractor;
     [SerializeField] XRRayInteractor rInteractor;
 
     [SerializeField] ARAnchorManager anchorManager;
+
+    [Header("Debug Settings")]
+    public bool testingText;
+
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +50,11 @@ public class PlacementHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ObjectGrabbed();
+        //ObjectGrabbed();
+        if(testingText)
+        {
+            textField.text = "Amount to place =" + spheresToPlace;
+        }
     }
 
     public void ObjectGrabbed()
@@ -56,57 +68,65 @@ public class PlacementHandler : MonoBehaviour
                 currentObject = objectsToPlace[i];             
 
                 CheckObject();
-                Debug.Log("DEBUG: Testing 1");
                 EnablePlacement();
-                Debug.Log("DEBUG: Testing 2");
+                break;
             }
             else
             {
                 textField.text = "No Object selected";
             }
         }
+
     }
 
     private void Spawn(BaseInteractionEventArgs args)
     {
         if(allowPlacement)
         {
-           Debug.Log("DEBUG: Testing 4");
            lInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
 
            Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(-hit.normal));
            anchorManager.AddAnchor(hitpose);
 
            Instantiate(spawnPrefab, hitpose.position, hitpose.rotation);
-           Debug.Log("DEBUG: Testing 5");
         }
     }
 
     private void CheckObject()
     {
-        if(currentObject.name == "Cube")
-        {
-            amountToPlace = cubesToPlace;
-            spawnPrefab = placeObjects[0];
-        }
-        if (currentObject.name == "Sphere")
+        if(currentObject.name == objectName1)
         {
             amountToPlace = spheresToPlace;
-            spawnPrefab = placeObjects[1];
+            spawnPrefab = placeObjects[0];
+
+            textField.text = "Objects to place: " + amountToPlace;
         }
-        if (currentObject.name == "Cylinder")
+        else if (currentObject.name == objectName2)
+        {
+            amountToPlace = cubesToPlace;
+            spawnPrefab = placeObjects[1];
+
+            textField.text = "Objects to place: " + amountToPlace;
+        }
+        else if (currentObject.name == objectName3)
         {
             amountToPlace = cylindersToPlace;
             spawnPrefab = placeObjects[2];
+
+            textField.text = "Objects to place: " + amountToPlace;
         }
-
-        textField.text = "Objects to place:" + amountToPlace.ToString();
-
     }
 
     private void EnablePlacement()
     {
         lInteractor.gameObject.SetActive(true);
         allowPlacement = true;
+    }
+
+    public void DroppedObject()
+    {
+        textField.text = "No Object selected";
+        lInteractor.gameObject.SetActive(false);
+        allowPlacement = false;
     }
 }
