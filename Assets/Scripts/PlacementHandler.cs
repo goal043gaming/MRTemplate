@@ -36,6 +36,7 @@ public class PlacementHandler : MonoBehaviour
 
     [Header("Debug Settings")]
     public bool testingText;
+    [SerializeField] GameObject prevObject;
 
 
     // Start is called before the first frame update
@@ -56,6 +57,8 @@ public class PlacementHandler : MonoBehaviour
         {
             textField.text = "Amount to place =" + spheresToPlace;
         }
+
+        ShowPreview();
     }
 
     public void ObjectGrabbed()
@@ -86,7 +89,7 @@ public class PlacementHandler : MonoBehaviour
         {
             if(amountToPlace <= 0)
             {
-                allowPlacement = false;
+                //allowPlacement = false;
                 textField.text = "You've placed all of the objects";
             }
 
@@ -167,5 +170,25 @@ public class PlacementHandler : MonoBehaviour
         }
 
         textField.text = "Objects to place: " + amountToPlace;
+    }
+
+    private void ShowPreview()
+    {
+        if (spawnPrefab != null && allowPlacement)
+        {
+            lInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
+
+            Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(-hit.normal));
+            anchorManager.AddAnchor(hitpose);
+
+            spawnPrefab.transform.position = hitpose.position;
+            spawnPrefab.transform.rotation = hitpose.rotation;
+
+        }
+        if(amountToPlace <= 0)
+        {
+            allowPlacement = false;
+        }
+       
     }
 }
