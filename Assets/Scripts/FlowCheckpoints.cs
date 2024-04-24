@@ -5,6 +5,12 @@ using UnityEngine;
 public class FlowCheckpoints : MonoBehaviour
 {
     public bool checkPointPassed = false;
+    public bool isActive;
+
+    [SerializeField][Range(0,1)] float disableTimer;
+
+    [SerializeField] FlowHandler flowHandler;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,17 +29,17 @@ public class FlowCheckpoints : MonoBehaviour
         if(other.transform.tag == "Flow")
         {
             checkPointPassed = true;
+            StartCoroutine(disableCheckPoint());
         }
         else
         {
             checkPointPassed = false;
         }   
     }
-    private void OnTriggerExit(Collider other)
+
+    private IEnumerator disableCheckPoint()
     {
-        if (other.transform.tag == "Flow")
-        {
-            checkPointPassed = false;
-        }
+        yield return new WaitForSeconds(disableTimer);
+        checkPointPassed = false;
     }
 }

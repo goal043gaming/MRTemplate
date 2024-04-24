@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,14 +10,21 @@ public class FlowHandler : MonoBehaviour
     [SerializeField] Transform altLoc;
 
     [SerializeField] GameObject[] checkPoints;
+    [SerializeField] GameObject[] objectsToMove;
+
+    private GameObject currentObjectToMove;
+
     private FlowCheckpoints checkPassed;
+
     [SerializeField] float speed;
 
-    public bool valve1 = false;
-    public bool valve2 = false;
+    public bool v1isOpen = false;
+    private bool used = false;
 
     private int curCheckPoint = 0;
     private Vector3 currentDirection;
+
+    private bool allowMovement = false;
 
     private void Start()
     {
@@ -24,6 +32,9 @@ public class FlowHandler : MonoBehaviour
         {
             checkPassed = checkPoints[i].GetComponent<FlowCheckpoints>();
         }
+
+        allowMovement = true;
+        currentObjectToMove = objectsToMove[0];
     }
     private void Update()
     {
@@ -36,20 +47,25 @@ public class FlowHandler : MonoBehaviour
 
     private void SetDirection()
     {
-        Vector3 defaultDir = targetPos.position - transform.position;
+        Vector3 defaultDir = targetPos.position - currentObjectToMove.transform.position;
 
-        if(!valve1 && !valve2)
+        if(!v1isOpen)
         {
             currentDirection = defaultDir;
         }
-        else if(valve1 && checkPassed.checkPointPassed == true)
+        else if(v1isOpen && checkPassed.checkPointPassed == true)
         {
-            currentDirection = altLoc.position - transform.position;
+            currentDirection = altLoc.position - currentObjectToMove.transform.position;
+            allowMovement = false;
         }
     }
 
     public void Move()
     {
-        transform.position += currentDirection * speed * Time.deltaTime;
+        if(allowMovement)
+        {
+            currentObjectToMove.transform.position += currentDirection * speed / 2 * Time.deltaTime;
+            currentObjectToMove.transform.localScale += currentDirection * speed * Time.deltaTime;
+        }
     }
 }
