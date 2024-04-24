@@ -57,6 +57,9 @@ public class FlowHandler : MonoBehaviour
         {
             currentDirection = altLoc.position - currentObjectToMove.transform.position;
             allowMovement = false;
+            objectsToMove[1].SetActive(true);
+            currentObjectToMove = objectsToMove[1];
+            allowMovement = true;
         }
     }
 
