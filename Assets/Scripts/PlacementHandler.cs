@@ -38,6 +38,9 @@ public class PlacementHandler : MonoBehaviour
     public bool testingText;
     [SerializeField] GameObject prevObject;
 
+    [Header("Haptic Feedback")]
+    [SerializeField][Range(0,1)] float hapIntensity;
+    [SerializeField] float hapDuration;
 
     // Start is called before the first frame update
     void Start()
@@ -142,6 +145,7 @@ public class PlacementHandler : MonoBehaviour
     {
         lInteractor.gameObject.SetActive(true);
         allowPlacement = true;
+        TriggerHaptic(lInteractor.xrController);
     }
 
     public void DroppedObject()
@@ -190,5 +194,13 @@ public class PlacementHandler : MonoBehaviour
             allowPlacement = false;
         }
        
+    }
+
+    public void TriggerHaptic(XRBaseController controller)
+    {
+        if(hapIntensity > 0)
+        {
+            controller.SendHapticImpulse(hapIntensity, hapDuration);
+        }
     }
 }
