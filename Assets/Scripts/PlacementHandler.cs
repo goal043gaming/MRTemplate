@@ -16,10 +16,16 @@ public class PlacementHandler : MonoBehaviour
     private GameObject spawnPrefab;
 
     private int amountToPlace;
+
     private GrabDetection grabDetection;
+    private ObjectHandler objectHandler;
+
     private bool allowPlacement = false;
     private int selectedObjectNumber;
+
     [SerializeField] TMP_Text textField;
+    [SerializeField] TMP_Text objName;
+    [SerializeField] TMP_Text objDesc;
 
     [SerializeField] int spheresToPlace;
     [SerializeField] int cubesToPlace;
@@ -48,6 +54,7 @@ public class PlacementHandler : MonoBehaviour
         for(int i = 0; i < objectsToPlace.Count; i++)
         {
            grabDetection = objectsToPlace[i].GetComponent<GrabDetection>();
+           objectHandler = objectsToPlace[i].GetComponent<ObjectHandler>();
         }
         lInteractor.selectEntered.AddListener(Spawn);
     }
@@ -76,6 +83,8 @@ public class PlacementHandler : MonoBehaviour
 
                 CheckObject();
                 EnablePlacement();
+                UpdateUI();
+
                 break;
             }
             else
@@ -90,23 +99,14 @@ public class PlacementHandler : MonoBehaviour
     {
         if(allowPlacement)
         {
-            if(amountToPlace <= 0)
-            {
-                //allowPlacement = false;
-                textField.text = "You've placed all of the objects";
-            }
+           lInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
 
-            else
-            {
-                lInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
+           Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(-hit.normal));
+           anchorManager.AddAnchor(hitpose);
 
-                Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(-hit.normal));
-                anchorManager.AddAnchor(hitpose);
+           Instantiate(spawnPrefab, hitpose.position, hitpose.rotation);
 
-                Instantiate(spawnPrefab, hitpose.position, hitpose.rotation);
-
-                UpdateNumber();
-            }
+           UpdateNumber();
         }
     }
 
@@ -151,6 +151,9 @@ public class PlacementHandler : MonoBehaviour
     public void DroppedObject()
     {
         textField.text = "No Object selected";
+        objDesc.text = "No Object selected";
+        objName.text = "No Object selected";
+
         lInteractor.gameObject.SetActive(false);
         allowPlacement = false;
     }
@@ -192,8 +195,16 @@ public class PlacementHandler : MonoBehaviour
         if(amountToPlace <= 0)
         {
             allowPlacement = false;
+            textField.text = "You've placed all of the objects";
         }
        
+    }
+
+    private void UpdateUI()
+    {
+        objectHandler = currentObject.GetComponent<ObjectHandler>();
+        objName.text = objectHandler.ObjectName;
+        objDesc.text = objectHandler.ObjectDescription;
     }
 
     public void TriggerHaptic(XRBaseController controller)

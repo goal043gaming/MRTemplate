@@ -8,6 +8,9 @@ public class ObjectHandler : MonoBehaviour
     private Material startMaterial;
     private Renderer objectRenderer;
 
+    public string ObjectName;
+    public string ObjectDescription;
+
     // Start is called before the first frame update
     void Start()
     {
