@@ -18,20 +18,24 @@ public class FlowHandler : MonoBehaviour
     [SerializeField] float speed;
 
     public bool v1isOpen = false;
+    public bool v2isOpen = false;
 
     private Vector3 currentDirection;
 
     private bool allowMovement = false;
 
+    private bool check1Passed;
+
     private void Start()
     {
-        for(int i = 0; i < checkPoints.Length; i++)
+        /* for(int i = 0; i < checkPoints.Length; i++)
         {
             checkPassed = checkPoints[i].GetComponent<FlowCheckpoints>();
-        }
+        }*/
 
         allowMovement = true;
 
+        checkPassed = checkPoints[0].GetComponent<FlowCheckpoints>();
         currentObjectToMove = objectsToMove[0];
         currentTarget = targets[0];
     }
@@ -59,6 +63,26 @@ public class FlowHandler : MonoBehaviour
             currentObjectToMove = objectsToMove[1];
 
             currentDirection = currentTarget.position - currentObjectToMove.transform.position;
+
+            checkPassed = checkPoints[1].GetComponent<FlowCheckpoints>();
+
+            check1Passed = true;
+
+            if(v2isOpen && checkPassed.checkPointPassed == true && check1Passed == true)
+            {
+                currentTarget = targets[2];
+                objectsToMove[2].SetActive(true);
+                currentObjectToMove = objectsToMove[2];
+
+                currentDirection = currentTarget.position - currentObjectToMove.transform.position;
+            }
+            else if(!v2isOpen && checkPassed.checkPointPassed == true && check1Passed == true) {
+                currentTarget = targets[3];
+                objectsToMove[2].SetActive(true);
+                currentObjectToMove = objectsToMove[2];
+
+                currentDirection = currentTarget.position - currentObjectToMove.transform.position;
+            }
         }
     }
 
