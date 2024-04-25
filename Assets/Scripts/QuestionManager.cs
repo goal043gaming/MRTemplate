@@ -10,7 +10,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] GameObject[] options;
     [SerializeField] TMP_Text[] answerText;
     [SerializeField] TMP_Text questionText;
-
+    [SerializeField] SpawnBall ballSpawner;
     public int currentQuestion;
     public bool t_Correct;
 
@@ -24,6 +24,7 @@ public class QuestionManager : MonoBehaviour
         questionText.text = qAHolder[currentQuestion].questions;
 
         SetAnswers();
+        ballSpawner.SpawnPrefab();
     }
 
     public void SetAnswers()
