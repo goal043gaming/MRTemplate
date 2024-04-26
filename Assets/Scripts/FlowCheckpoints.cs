@@ -5,12 +5,14 @@ using UnityEngine;
 public class FlowCheckpoints : MonoBehaviour
 {
     public bool checkPointPassed = false;
-    public bool isActive;
 
     public bool valveOpen = false;
 
-    [SerializeField] public Transform rightDirection;
-    [SerializeField] public Transform wrongDirection;
+    [SerializeField] Transform rightDirection;
+    [SerializeField] Transform wrongDirection;
+
+    [SerializeField] public GameObject linkedObject;
+    public Transform curTarget;
 
     [SerializeField][Range(0,1)] float disableTimer;
 
@@ -33,6 +35,15 @@ public class FlowCheckpoints : MonoBehaviour
     {
         if(other.transform.tag == "Flow")
         {
+            if(valveOpen)
+            {
+                curTarget = rightDirection;
+            }
+            else if (!valveOpen)
+            {
+                curTarget = wrongDirection;
+            }
+
             checkPointPassed = true;
             StartCoroutine(disableCheckPoint());
         }

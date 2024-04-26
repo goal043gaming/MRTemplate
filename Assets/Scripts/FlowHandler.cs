@@ -14,6 +14,7 @@ public class FlowHandler : MonoBehaviour
     private Transform currentTarget;
 
     private FlowCheckpoints checkPassed;
+    private FlowCheckpoints currentPoint;
 
     [SerializeField] float speed;
 
@@ -26,6 +27,8 @@ public class FlowHandler : MonoBehaviour
 
     private bool check1Passed;
 
+    private bool valveIsOpen = false;
+
     private void Start()
     {
         /* for(int i = 0; i < checkPoints.Length; i++)
@@ -33,19 +36,26 @@ public class FlowHandler : MonoBehaviour
             checkPassed = checkPoints[i].GetComponent<FlowCheckpoints>();
         }*/
 
-        allowMovement = true;
 
-        checkPassed = checkPoints[0].GetComponent<FlowCheckpoints>();
+
+        //checkPassed = checkPoints[0].GetComponent<FlowCheckpoints>();
+
+        allowMovement = true;
         currentObjectToMove = objectsToMove[0];
-        currentTarget = targets[0];
+        currentTarget = checkPoints[0].transform;
+
     }
     private void Update()
     {
-        SetDirection();
+        //SetDirection();
+
+        CurrentDirection();
 
         Move();
 
-        print(checkPassed.checkPointPassed);
+        CurrentCheckPoint();
+
+
     }
 
     private void SetDirection()
@@ -93,5 +103,29 @@ public class FlowHandler : MonoBehaviour
             currentObjectToMove.transform.position += currentDirection * speed / 2 * Time.deltaTime;
             currentObjectToMove.transform.localScale += currentDirection * speed * Time.deltaTime;
         }
+    }
+
+    private void CurrentCheckPoint()
+    {
+        for(int i = 0; i < checkPoints.Length; i++)
+        {
+            checkPassed = checkPoints[i].GetComponent<FlowCheckpoints>();
+
+            if(checkPassed.checkPointPassed)
+            {
+                currentPoint = checkPoints[i].GetComponent<FlowCheckpoints>();
+                valveIsOpen = currentPoint.valveOpen;
+                currentTarget = currentPoint.curTarget;
+                currentObjectToMove = currentPoint.linkedObject;
+                currentObjectToMove.SetActive(true);
+
+                break;
+            }
+        }
+    }
+
+    private void CurrentDirection()
+    {
+        currentDirection = currentTarget.position - currentObjectToMove.transform.position;
     }
 }
