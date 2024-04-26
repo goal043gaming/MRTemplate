@@ -35,6 +35,8 @@ public class FlowCheckpoints : MonoBehaviour
     {
         if(other.transform.tag == "Flow")
         {
+            print("testing collision");
+
             if(valveOpen)
             {
                 curTarget = rightDirection;
@@ -44,6 +46,7 @@ public class FlowCheckpoints : MonoBehaviour
                 curTarget = wrongDirection;
             }
 
+            print("testing checkpointpass");
             checkPointPassed = true;
             StartCoroutine(disableCheckPoint());
         }

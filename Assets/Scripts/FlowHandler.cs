@@ -10,8 +10,12 @@ public class FlowHandler : MonoBehaviour
     [SerializeField] GameObject[] checkPoints;
     [SerializeField] GameObject[] objectsToMove;
 
+    [SerializeField] Transform startingTarget;
     private GameObject currentObjectToMove;
     private Transform currentTarget;
+
+    private bool isTurnedX = false;
+    private bool isTurnedY = false;
 
     private FlowCheckpoints checkPassed;
     private FlowCheckpoints currentPoint;
@@ -42,7 +46,7 @@ public class FlowHandler : MonoBehaviour
 
         allowMovement = true;
         currentObjectToMove = objectsToMove[0];
-        currentTarget = checkPoints[0].transform;
+        currentTarget = startingTarget;
 
     }
     private void Update()
@@ -119,6 +123,15 @@ public class FlowHandler : MonoBehaviour
                 currentObjectToMove = currentPoint.linkedObject;
                 currentObjectToMove.SetActive(true);
 
+                if(currentDirection.x < 0)
+                {
+                    CheckFacingX();
+                }
+                if(currentDirection.y < 0)
+                {
+                    CheckFacingY();
+                }
+                
                 break;
             }
         }
@@ -127,5 +140,23 @@ public class FlowHandler : MonoBehaviour
     private void CurrentDirection()
     {
         currentDirection = currentTarget.position - currentObjectToMove.transform.position;
+    }
+
+    private void CheckFacingX()
+    {
+        if (currentDirection.x < 0 && !isTurnedX)
+        {
+            currentObjectToMove.transform.localScale = new Vector3(-0.3f, 0.3f, 0.3f);
+            isTurnedX = true;
+        }
+    }
+
+    private void CheckFacingY()
+    {
+        if(currentDirection.y > 0 && !isTurnedY)
+        {
+            currentObjectToMove.transform.localScale = new Vector3(0.3f, -0.3f, 0.3f);
+            isTurnedY = true;
+        }
     }
 }
