@@ -7,6 +7,11 @@ public class FlowCheckpoints : MonoBehaviour
     public bool checkPointPassed = false;
     public bool isActive;
 
+    public bool valveOpen = false;
+
+    [SerializeField] public Transform rightDirection;
+    [SerializeField] public Transform wrongDirection;
+
     [SerializeField][Range(0,1)] float disableTimer;
 
     [SerializeField] FlowHandler flowHandler;
