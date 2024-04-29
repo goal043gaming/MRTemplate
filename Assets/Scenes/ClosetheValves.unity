@@ -4090,7 +4090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1125818593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4176,6 +4176,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1479596027}
+  - {fileID: 1860358777}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1171607300
@@ -6019,7 +6020,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -6070,8 +6071,8 @@ Rigidbody:
   m_GameObject: {fileID: 1479596021}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 5
-  m_AngularDrag: 4
+  m_Drag: 0
+  m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -6174,7 +6175,6 @@ Transform:
   m_Children:
   - {fileID: 1513061232}
   - {fileID: 75402091}
-  - {fileID: 1860358777}
   m_Father: {fileID: 1125818596}
   m_LocalEulerAnglesHint: {x: 0, y: 165, z: 0}
 --- !u!114 &1479596028
@@ -7515,11 +7515,11 @@ Transform:
   m_GameObject: {fileID: 1860358776}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01154989, y: 0.07134974, z: 2.0450366}
-  m_LocalScale: {x: 0.28309867, y: 0.31289, z: 4.595588}
+  m_LocalPosition: {x: 0.016438993, y: -0.032912362, z: -0.65388095}
+  m_LocalScale: {x: 0.036202613, y: 0.15710019, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1479596027}
+  m_Father: {fileID: 1125818596}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1860358778
 BoxCollider:
