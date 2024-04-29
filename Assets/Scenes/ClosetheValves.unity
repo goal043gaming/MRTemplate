@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31453457, g: 0.55162674, b: 0.82192343, a: 1}
+  m_IndirectSpecularColor: {r: 0.31461963, g: 0.5517244, b: 0.8219393, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2464,8 +2464,8 @@ Transform:
   m_GameObject: {fileID: 487018002}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.408, y: 2.114, z: 1.2285}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: 1.408, y: 2.069, z: 1.2285}
+  m_LocalScale: {x: 0.3, y: 0.3, z: -0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2590,12 +2590,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkPointPassed: 0
-  valveOpen: 1
+  valveOpen: 0
   rightDirection: {fileID: 1640003555}
   wrongDirection: {fileID: 319839878}
   linkedObject: {fileID: 487018002}
   curTarget: {fileID: 0}
-  disableTimer: 0.583
+  disableTimer: 0.1
   flowHandler: {fileID: 1569558103}
 --- !u!65 &619848828
 BoxCollider:
@@ -7728,6 +7728,14 @@ PrefabInstance:
     - target: {fileID: 4960123817641129319, guid: 1d76d2964fe808544897049c16f10855, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
+      propertyPath: speed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
+      propertyPath: yOffset
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
       propertyPath: v1isOpen

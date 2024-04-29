@@ -33,6 +33,9 @@ public class FlowHandler : MonoBehaviour
 
     private bool valveIsOpen = false;
 
+    [SerializeField] float xOffset;
+    [SerializeField] float yOffset;
+
     private void Start()
     {
         /* for(int i = 0; i < checkPoints.Length; i++)
@@ -59,7 +62,7 @@ public class FlowHandler : MonoBehaviour
 
         CurrentCheckPoint();
 
-
+        print(currentDirection);
     }
 
     private void SetDirection()
@@ -123,11 +126,11 @@ public class FlowHandler : MonoBehaviour
                 currentObjectToMove = currentPoint.linkedObject;
                 currentObjectToMove.SetActive(true);
 
-                if(currentDirection.x < 0)
+                if (currentDirection.x < xOffset)
                 {
                     CheckFacingX();
                 }
-                if(currentDirection.y < 0)
+                if(currentDirection.y < yOffset)
                 {
                     CheckFacingY();
                 }
@@ -144,7 +147,7 @@ public class FlowHandler : MonoBehaviour
 
     private void CheckFacingX()
     {
-        if (currentDirection.x < 0 && !isTurnedX)
+        if (currentDirection.x < xOffset && !isTurnedX)
         {
             currentObjectToMove.transform.localScale = new Vector3(-0.3f, 0.3f, 0.3f);
             isTurnedX = true;
@@ -153,9 +156,9 @@ public class FlowHandler : MonoBehaviour
 
     private void CheckFacingY()
     {
-        if(currentDirection.y > 0 && !isTurnedY)
+        if(currentDirection.y < yOffset && !isTurnedY)
         {
-            currentObjectToMove.transform.localScale = new Vector3(0.3f, -0.3f, 0.3f);
+            currentObjectToMove.transform.localScale = new Vector3(-0.3f, -0.3f, 0.3f);
             isTurnedY = true;
         }
     }
