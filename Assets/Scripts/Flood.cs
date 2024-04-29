@@ -8,7 +8,7 @@ public class Flood : MonoBehaviour
     public float speed = 1f;
     public float maxHeight = 5f;
 
-    private bool flooding = true;
+    public bool flooding = false;
     private bool isPlaying = false;
 
     [SerializeField] AudioSource audio;

@@ -27,7 +27,7 @@ public class FlowHandler : MonoBehaviour
 
     private Vector3 currentDirection;
 
-    private bool allowMovement = false;
+    public bool allowMovement = false;
 
     private bool check1Passed;
 
@@ -61,8 +61,6 @@ public class FlowHandler : MonoBehaviour
         Move();
 
         CurrentCheckPoint();
-
-        print(currentDirection);
     }
 
     private void SetDirection()
