@@ -17,7 +17,7 @@ public class HoleDetection : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Throwable")
+        if(collision.transform.tag == "Throwable" && answerManager.isCorrect)
         { 
             if (collision.gameObject.GetComponent<BallBoosters>().boosterTriggered == true)
             {
@@ -39,6 +39,15 @@ public class HoleDetection : MonoBehaviour
 
                 answerManager.Answer();
             }
+        }
+        else
+        {
+            text.gameObject.SetActive(true);
+            StartCoroutine(TextTimer(1));
+            text.text = "0";
+            Destroy(collision.gameObject);
+
+            answerManager.Answer();
         }
     }
 
