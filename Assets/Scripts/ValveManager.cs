@@ -12,7 +12,6 @@ public class ValveManager : MonoBehaviour
     private void Update()
     {
         rotationValue = valveRotation.value;
-        print(rotationValue);
         SetState();
     }
 
