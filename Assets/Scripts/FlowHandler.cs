@@ -61,6 +61,8 @@ public class FlowHandler : MonoBehaviour
         Move();
 
         CurrentCheckPoint();
+
+        //print(currentDirection);
     }
 
     private void SetDirection()
@@ -123,12 +125,14 @@ public class FlowHandler : MonoBehaviour
                 currentTarget = currentPoint.curTarget;
                 currentObjectToMove = currentPoint.linkedObject;
                 currentObjectToMove.SetActive(true);
+                isTurnedY = false;
+                isTurnedX = false;
 
                 if (currentDirection.x < xOffset)
                 {
                     CheckFacingX();
                 }
-                if(currentDirection.y < yOffset)
+                if(currentDirection.y > yOffset)
                 {
                     CheckFacingY();
                 }
@@ -154,9 +158,9 @@ public class FlowHandler : MonoBehaviour
 
     private void CheckFacingY()
     {
-        if(currentDirection.y < yOffset && !isTurnedY)
+        if (currentDirection.y > yOffset && !isTurnedY)
         {
-            currentObjectToMove.transform.localScale = new Vector3(-0.3f, -0.3f, 0.3f);
+            currentObjectToMove.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             isTurnedY = true;
         }
     }
