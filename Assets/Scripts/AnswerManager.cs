@@ -13,17 +13,22 @@ public class AnswerManager : MonoBehaviour
     [SerializeField] SpawnBall ballSpawner;
 
     [SerializeField] QuestionManager questionManager;
+
+    [SerializeField] AudioSource wrongAnswerAudio;
+    [SerializeField] AudioSource rightAnswerAudio;
     public void Answer()
     {
         if(isCorrect)
         {
             questionManager.Correct();
             explosionR.Play();
+            rightAnswerAudio.Play();
         }
         else
         {
             explosionW.Play();
             ballSpawner.SpawnPrefab();
+            wrongAnswerAudio.Play();
         }
     }
 }

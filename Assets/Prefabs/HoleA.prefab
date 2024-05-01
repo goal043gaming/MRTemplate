@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 1203926589857413167}
   - component: {fileID: 2317849688504503011}
   - component: {fileID: 6595246786590950109}
+  - component: {fileID: 1013605126688256159}
   m_Layer: 0
   m_Name: HoleA
   m_TagString: Spawned
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1203926589857413167
 Transform:
   m_ObjectHideFlags: 0
@@ -46,8 +47,8 @@ AudioSource:
   m_GameObject: {fileID: 1816594211983487152}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  OutputAudioMixerGroup: {fileID: -9072526229994399472, guid: e82fb4604eb3d7b45afb4f9b7d6a89ff, type: 2}
+  m_audioClip: {fileID: 8300000, guid: bfa01ccf6fdbd3b40a02be54133b10e9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -148,7 +149,106 @@ MonoBehaviour:
   isCorrect: 1
   explosionW: {fileID: 5873984073889836140}
   explosionR: {fileID: 1307564748272712383}
-  questionManager: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+  ballSpawner: {fileID: 0}
+  questionManager: {fileID: 0}
+  wrongAnswerAudio: {fileID: 1013605126688256159}
+  rightAnswerAudio: {fileID: 2317849688504503011}
+--- !u!82 &1013605126688256159
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816594211983487152}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -9072526229994399472, guid: e82fb4604eb3d7b45afb4f9b7d6a89ff, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 73e0f1d9acadf2f41a41b10bfe7cd87d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2286509975979987837
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +607,6 @@ MonoBehaviour:
   pointBooster: {fileID: 381519445506545396, guid: 9ad4541552f47494196970a50ea1f96e, type: 3}
   startingPoints: 100
   text: {fileID: 8103035771722274551}
-  audioClip: {fileID: 2317849688504503011}
   answerManager: {fileID: 6595246786590950109}
 --- !u!1 &7580881881784242853
 GameObject:
@@ -722,7 +821,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7713899097505295309}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -833,7 +932,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8921344042931131315}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

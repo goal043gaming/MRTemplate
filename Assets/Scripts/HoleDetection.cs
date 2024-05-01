@@ -12,7 +12,6 @@ public class HoleDetection : MonoBehaviour
     private GameObject playerPos;
 
     [SerializeField] TMP_Text text;
-    [SerializeField] AudioSource audioClip;
     [SerializeField] AnswerManager answerManager;
 
     private void OnCollisionEnter(Collision collision)
@@ -23,7 +22,6 @@ public class HoleDetection : MonoBehaviour
             {
                 text.gameObject.SetActive(true);
                 StartCoroutine(TextTimer(1));
-                audioClip.Play();
                 pointsToAdd = startingPoints * collision.gameObject.GetComponent<BallBoosters>().boosterAmount;
                 text.text = pointsToAdd.ToString();
                 Destroy(collision.gameObject);
