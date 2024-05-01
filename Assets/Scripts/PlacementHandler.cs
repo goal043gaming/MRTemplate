@@ -39,6 +39,9 @@ public class PlacementHandler : MonoBehaviour
     [SerializeField] XRRayInteractor rInteractor;
 
     [SerializeField] ARAnchorManager anchorManager;
+    [Header("Objectives")]
+    [SerializeField] ObjectiveHandler objective;
+    [SerializeField] string[] objectivesToDisplay;
 
     [Header("Debug Settings")]
     public bool testingText;
@@ -57,6 +60,8 @@ public class PlacementHandler : MonoBehaviour
            objectHandler = objectsToPlace[i].GetComponent<ObjectHandler>();
         }
         lInteractor.selectEntered.AddListener(Spawn);
+
+        objective.UpdateText(objectivesToDisplay[0]);
     }
 
     // Update is called once per frame
@@ -146,6 +151,8 @@ public class PlacementHandler : MonoBehaviour
         lInteractor.gameObject.SetActive(true);
         allowPlacement = true;
         TriggerHaptic(lInteractor.xrController);
+
+        objective.UpdateText(objectivesToDisplay[1]);
     }
 
     public void DroppedObject()
@@ -156,6 +163,8 @@ public class PlacementHandler : MonoBehaviour
 
         lInteractor.gameObject.SetActive(false);
         allowPlacement = false;
+
+        objective.UpdateText(objectivesToDisplay[0]);
     }
 
     private void UpdateNumber()

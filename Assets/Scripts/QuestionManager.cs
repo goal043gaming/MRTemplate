@@ -16,6 +16,10 @@ public class QuestionManager : MonoBehaviour
     public int currentQuestion;
     public bool t_Correct;
 
+    [Header("Objectives")]
+    [SerializeField] ObjectiveHandler objective;
+    [SerializeField] string[] objectivesToDisplay;
+
     public void Start()
     {
         GenerateQuestion();
@@ -28,6 +32,7 @@ public class QuestionManager : MonoBehaviour
         writingQuestion.Play();
         SetAnswers();
         ballSpawner.SpawnPrefab();
+        objective.UpdateText(objectivesToDisplay[0]);
     }
 
     public void SetAnswers()

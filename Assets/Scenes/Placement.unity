@@ -316,12 +316,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4841312060113450977, guid: a2fce5f10dc821b409ae6e9bc04d7df0, type: 3}
+      propertyPath: m_Color.b
+      value: 0.28862584
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841312060113450977, guid: a2fce5f10dc821b409ae6e9bc04d7df0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.28862584
+      objectReference: {fileID: 0}
+    - target: {fileID: 4841312060113450977, guid: a2fce5f10dc821b409ae6e9bc04d7df0, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8867924
+      objectReference: {fileID: 0}
     - target: {fileID: 8072788855678715034, guid: a2fce5f10dc821b409ae6e9bc04d7df0, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8288505186703199268, guid: a2fce5f10dc821b409ae6e9bc04d7df0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2fce5f10dc821b409ae6e9bc04d7df0, type: 3}
@@ -3216,7 +3229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3032334164665928404, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5
+      value: 0.569
       objectReference: {fileID: 0}
     - target: {fileID: 3032334164665928404, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3248,11 +3261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3032334164665928405, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_Name
-      value: Coaching UI (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3032334164665928405, guid: 66d40221d132d04499855da9ce315f20, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: ObjectiveHandler
       objectReference: {fileID: 0}
     - target: {fileID: 3032334164805062090, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_Camera
@@ -3268,6 +3277,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3032334164665928404, guid: 66d40221d132d04499855da9ce315f20, type: 3}
   m_PrefabInstance: {fileID: 1662148924}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1662148927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6556985459297839758, guid: 66d40221d132d04499855da9ce315f20, type: 3}
+  m_PrefabInstance: {fileID: 1662148924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafec2c3411cb4f408ee17f561931699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1718692587
 GameObject:
   m_ObjectHideFlags: 0
@@ -6301,6 +6321,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1562915038}
     - target: {fileID: 367056301821787370, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
+      propertyPath: objective
+      value: 
+      objectReference: {fileID: 1662148927}
+    - target: {fileID: 367056301821787370, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
       propertyPath: textField
       value: 
       objectReference: {fileID: 1154961395}
@@ -6352,6 +6376,18 @@ PrefabInstance:
       propertyPath: objectsToPlace.Array.data[2]
       value: 
       objectReference: {fileID: 1818126271}
+    - target: {fileID: 367056301821787370, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
+      propertyPath: objectivesToDisplay.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 367056301821787370, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
+      propertyPath: objectivesToDisplay.Array.data[0]
+      value: Find and select an object
+      objectReference: {fileID: 0}
+    - target: {fileID: 367056301821787370, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
+      propertyPath: objectivesToDisplay.Array.data[1]
+      value: Place the objects
+      objectReference: {fileID: 0}
     - target: {fileID: 3656923389204110391, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.6417749
