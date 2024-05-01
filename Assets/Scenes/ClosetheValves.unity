@@ -11325,7 +11325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3032334164665928405, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3032334164805062090, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_Camera
@@ -11341,6 +11341,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3032334164665928404, guid: 66d40221d132d04499855da9ce315f20, type: 3}
   m_PrefabInstance: {fileID: 1662148924}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1662148926 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6556985459297839758, guid: 66d40221d132d04499855da9ce315f20, type: 3}
+  m_PrefabInstance: {fileID: 1662148924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cafec2c3411cb4f408ee17f561931699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1662247818
 GameObject:
   m_ObjectHideFlags: 0
@@ -17777,6 +17788,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2050465007}
     - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
+      propertyPath: objectiveHandler
+      value: 
+      objectReference: {fileID: 1662148926}
+    - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
       propertyPath: targets.Array.data[0]
       value: 
       objectReference: {fileID: 319839878}
@@ -17820,6 +17835,22 @@ PrefabInstance:
       propertyPath: objectsToMove.Array.data[2]
       value: 
       objectReference: {fileID: 1662247818}
+    - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
+      propertyPath: objectivesToDisplay.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
+      propertyPath: objectivesToDisplay.Array.data[0]
+      value: Close the correct Valves
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
+      propertyPath: objectivesToDisplay.Array.data[1]
+      value: Stop the water from flooding
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
+      propertyPath: objectivesToDisplay.Array.data[2]
+      value: Clean the flood
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

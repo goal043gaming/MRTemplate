@@ -10,6 +10,7 @@ public class Flood : MonoBehaviour
 
     public bool flooding = false;
     private bool isPlaying = false;
+    public bool hasFlooded = false;
 
     [SerializeField] AudioSource audio;
 
@@ -20,12 +21,11 @@ public class Flood : MonoBehaviour
         {
             flooding = false;
             audio.Stop();
-            isPlaying = false;
+            hasFlooded = true;
         }
 
         if(flooding)
         {
-            isPlaying = true;
             StartAudio();
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }

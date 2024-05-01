@@ -36,6 +36,11 @@ public class FlowHandler : MonoBehaviour
     [SerializeField] float xOffset;
     [SerializeField] float yOffset;
 
+    [SerializeField] Flood flood;
+
+    [SerializeField] ObjectiveHandler objectiveHandler;
+    [SerializeField] string[] objectivesToDisplay;
+
     private void Start()
     {
         /* for(int i = 0; i < checkPoints.Length; i++)
@@ -51,6 +56,8 @@ public class FlowHandler : MonoBehaviour
         currentObjectToMove = objectsToMove[0];
         currentTarget = startingTarget;
 
+        objectiveHandler.UpdateText(objectivesToDisplay[0]);
+
     }
     private void Update()
     {
@@ -63,6 +70,16 @@ public class FlowHandler : MonoBehaviour
         CurrentCheckPoint();
 
         //print(currentDirection);
+
+        if(flood.flooding)
+        {
+            objectiveHandler.UpdateText(objectivesToDisplay[1]);
+        }
+
+        if(flood.hasFlooded)
+        {
+            objectiveHandler.UpdateText(objectivesToDisplay[2]);
+        }
     }
 
     private void SetDirection()
