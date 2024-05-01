@@ -9,6 +9,9 @@ public class ValveManager : MonoBehaviour
     [SerializeField] FlowCheckpoints connectedCheckpoint;
     private float rotationValue;
 
+    [SerializeField] GameObject ClosedUI;
+    [SerializeField] GameObject OpenUI;
+
     private void Update()
     {
         rotationValue = valveRotation.value;
@@ -20,10 +23,14 @@ public class ValveManager : MonoBehaviour
         if(rotationValue <= 0.9)
         {
             connectedCheckpoint.valveOpen = false;
+            ClosedUI.SetActive(true);
+            OpenUI.SetActive(false);
         }
         else if(rotationValue >= 1)
         {
             connectedCheckpoint.valveOpen = true;
+            ClosedUI.SetActive(false);
+            OpenUI.SetActive(true);
         }
     }
 }
