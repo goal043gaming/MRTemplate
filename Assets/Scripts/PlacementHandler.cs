@@ -23,7 +23,7 @@ public class PlacementHandler : MonoBehaviour
     private bool allowPlacement = false;
     private int selectedObjectNumber;
 
-    [SerializeField] TMP_Text textField;
+    [SerializeField] TMP_Text objAmount;
     [SerializeField] TMP_Text objName;
     [SerializeField] TMP_Text objDesc;
 
@@ -39,6 +39,10 @@ public class PlacementHandler : MonoBehaviour
     [SerializeField] XRRayInteractor rInteractor;
 
     [SerializeField] ARAnchorManager anchorManager;
+
+    [Header("Sounds")]
+    [SerializeField] AudioSource placementSound;
+
     [Header("Objectives")]
     [SerializeField] ObjectiveHandler objective;
     [SerializeField] string[] objectivesToDisplay;
@@ -67,10 +71,9 @@ public class PlacementHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ObjectGrabbed();
         if(testingText)
         {
-            textField.text = "Amount to place =" + spheresToPlace;
+            objAmount.text = "Amount to place =" + spheresToPlace;
         }
 
         ShowPreview();
@@ -94,7 +97,7 @@ public class PlacementHandler : MonoBehaviour
             }
             else
             {
-                textField.text = "No Object selected";
+                objAmount.text = "No Object selected";
             }
         }
 
@@ -109,6 +112,7 @@ public class PlacementHandler : MonoBehaviour
            Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(-hit.normal));
            anchorManager.AddAnchor(hitpose);
 
+           placementSound.Play();
            Instantiate(spawnPrefab, hitpose.position, hitpose.rotation);
 
            UpdateNumber();
@@ -124,7 +128,7 @@ public class PlacementHandler : MonoBehaviour
 
             selectedObjectNumber = 0;
 
-            textField.text = "Objects to place: " + amountToPlace;
+            objAmount.text = "Objects to place: " + amountToPlace;
         }
         else if (currentObject.name == objectName2)
         {
@@ -133,7 +137,7 @@ public class PlacementHandler : MonoBehaviour
 
             selectedObjectNumber = 1;
 
-            textField.text = "Objects to place: " + amountToPlace;
+            objAmount.text = "Objects to place: " + amountToPlace;
         }
         else if (currentObject.name == objectName3)
         {
@@ -142,7 +146,7 @@ public class PlacementHandler : MonoBehaviour
 
             selectedObjectNumber = 2;
 
-            textField.text = "Objects to place: " + amountToPlace;
+            objAmount.text = "Objects to place: " + amountToPlace;
         }
     }
 
@@ -157,7 +161,7 @@ public class PlacementHandler : MonoBehaviour
 
     public void DroppedObject()
     {
-        textField.text = "No Object selected";
+        objAmount.text = "No Object selected";
         objDesc.text = "No Object selected";
         objName.text = "No Object selected";
 
@@ -185,7 +189,7 @@ public class PlacementHandler : MonoBehaviour
             amountToPlace--;
         }
 
-        textField.text = "Objects to place: " + amountToPlace;
+        objAmount.text = "Objects to place: " + amountToPlace;
     }
 
     private void ShowPreview()
@@ -204,7 +208,7 @@ public class PlacementHandler : MonoBehaviour
         if(amountToPlace <= 0)
         {
             allowPlacement = false;
-            textField.text = "You've placed all of the objects";
+            objAmount.text = "You've placed all of the objects";
         }
        
     }
