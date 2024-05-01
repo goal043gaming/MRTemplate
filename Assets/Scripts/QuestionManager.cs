@@ -11,6 +11,8 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] TMP_Text[] answerText;
     [SerializeField] TMP_Text questionText;
     [SerializeField] SpawnBall ballSpawner;
+    [SerializeField] AudioSource writingQuestion;
+
     public int currentQuestion;
     public bool t_Correct;
 
@@ -23,6 +25,7 @@ public class QuestionManager : MonoBehaviour
         currentQuestion = Random.Range(0, qAHolder.Count);
         questionText.text = qAHolder[currentQuestion].questions;
 
+        writingQuestion.Play();
         SetAnswers();
         ballSpawner.SpawnPrefab();
     }

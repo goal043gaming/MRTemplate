@@ -1049,6 +1049,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1738626246}
     - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: writingQuestion
+      value: 
+      objectReference: {fileID: 7432980434244791046}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
       propertyPath: options.Array.data[0]
       value: 
       objectReference: {fileID: 2087443556}
@@ -5735,6 +5739,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a43f1c77112869418d7dd6a6797d9bd, type: 3}
+--- !u!82 &7432980434244791046 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2383827080473043733, guid: 3a43f1c77112869418d7dd6a6797d9bd, type: 3}
+  m_PrefabInstance: {fileID: 7432980434244791044}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7821075290672194935
 RectTransform:
   m_ObjectHideFlags: 0
