@@ -54,15 +54,11 @@ public class FlowStop : MonoBehaviour
             flowHandler.allowMovement = false;
             activeEffect.Stop();
         }
-
-        print("Testing1");
     }
 
     private void ButtonRelease()
     {
         isPressed = false;
-
-        print("Testing2");
     }
 
     private float GetValue()
