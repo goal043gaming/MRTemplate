@@ -14,12 +14,16 @@ public class FloodCheck : MonoBehaviour
 
     [SerializeField] ParticleSystem leakParticle;
 
+    [SerializeField] FlowStop flowStop;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.transform.tag == "Flow")
         {
             flowHandler.allowMovement = false;
             leakParticle.Play();
+            flowStop.activeEffect = leakParticle;
+            flowStop.ButtonEnabled = true;
             StartCoroutine(StartFlooding());
         }
     }
