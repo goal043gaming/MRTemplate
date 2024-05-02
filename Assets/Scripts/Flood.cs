@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class Flood : MonoBehaviour
@@ -8,11 +9,15 @@ public class Flood : MonoBehaviour
     public float speed = 1f;
     public float maxHeight = 5f;
 
-    public bool flooding = false;
+    [HideInInspector] public bool flooding = false;
     private bool isPlaying = false;
-    public bool hasFlooded = false;
+    [HideInInspector] public bool hasFlooded = false;
 
     [SerializeField] AudioSource audio;
+
+    [Header("Debug")]
+    public bool debug = false;
+    public bool isDebug = false;
 
     // Update is called once per frame
     void Update()
@@ -23,11 +28,21 @@ public class Flood : MonoBehaviour
             audio.Stop();
             hasFlooded = true;
         }
+        if(transform.position.y <= 0)
+        {
+            Destroy(gameObject);
+        }
 
         if(flooding)
         {
             StartAudio();
             transform.Translate(Vector3.up * speed * Time.deltaTime);
+        }
+
+        if(debug && !isDebug)
+        {
+            TakeWater(10);
+            isDebug = true;
         }
     }
 
@@ -41,5 +56,10 @@ public class Flood : MonoBehaviour
         {
             audio.Play();
         }
+    }
+
+    public void TakeWater(float amount)
+    {
+        transform.Translate(Vector3.down / amount);
     }
 }
