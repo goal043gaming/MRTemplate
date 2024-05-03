@@ -12,6 +12,10 @@ public class Flood : MonoBehaviour
 
     [HideInInspector] public bool flooding = false;
     private bool isPlaying = false;
+
+    private bool timerRunning;
+    [SerializeField] float graceTime;
+    private bool canDestroy = false;
     [HideInInspector] public bool hasFlooded = false;
 
     [SerializeField] AudioSource audio;
@@ -29,7 +33,7 @@ public class Flood : MonoBehaviour
             audio.Stop();
             hasFlooded = true;
         }
-        if(transform.position.y <= bottomHeight)
+        if(transform.position.y <= bottomHeight && canDestroy)
         {
             Destroy(gameObject);
         }
@@ -63,4 +67,6 @@ public class Flood : MonoBehaviour
     {
         transform.Translate(Vector3.down / amount);
     }
+
+
 }

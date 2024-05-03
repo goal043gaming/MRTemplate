@@ -23,8 +23,8 @@ public class FlowStop : MonoBehaviour
 
     private void Start()
     {
-        startPos = transform.localPosition;
-        joint = GetComponent<ConfigurableJoint>();
+        //startPos = transform.localPosition;
+        //joint = GetComponent<ConfigurableJoint>();
     }
 
     private void Update()
@@ -34,19 +34,19 @@ public class FlowStop : MonoBehaviour
             ButtonPress();
         }
 
-        if(!isPressed && GetValue() + thresholdValue >= 1)
+       /* if(!isPressed && GetValue() + thresholdValue >= 1)
         {
             ButtonPress();
         }
         if(isPressed && GetValue()  - thresholdValue <= 0)
         {
             ButtonRelease();
-        }
+        } */
 
     }
-    private void ButtonPress()
+    public void ButtonPress()
     {
-        isPressed = true;
+        //isPressed = true;
 
         if (ButtonEnabled)
         {

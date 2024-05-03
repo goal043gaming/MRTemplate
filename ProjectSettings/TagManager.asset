@@ -9,6 +9,7 @@ TagManager:
   - Spawned
   - Flow
   - Flood
+  - Water
   layers:
   - Default
   - TransparentFX

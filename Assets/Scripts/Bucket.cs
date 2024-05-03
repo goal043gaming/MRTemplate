@@ -21,4 +21,9 @@ public class Bucket : MonoBehaviour
             waterVisual.SetActive(true);
         }
     }
+    public void EmptyBucket()
+    {
+        isFull = false;
+        waterVisual.SetActive(false);
+    }
 }
