@@ -13,7 +13,7 @@ public class Flood : MonoBehaviour
     [HideInInspector] public bool flooding = false;
     private bool isPlaying = false;
 
-    private bool timerRunning;
+    public bool timerRunning;
     [SerializeField] float graceTime;
     private bool canDestroy = false;
     [HideInInspector] public bool hasFlooded = false;
@@ -41,6 +41,7 @@ public class Flood : MonoBehaviour
         if(flooding)
         {
             StartAudio();
+            StartTimer();
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
 
@@ -68,5 +69,20 @@ public class Flood : MonoBehaviour
         transform.Translate(Vector3.down / amount);
     }
 
-
+    private void StartTimer()
+    {
+        if(timerRunning)
+        {
+            if(graceTime > 0)
+            {
+                graceTime -= Time.deltaTime;
+            }
+            else
+            {
+                timerRunning = false;
+                graceTime = 0;
+                print(" testing");
+            }
+        }
+    }
 }

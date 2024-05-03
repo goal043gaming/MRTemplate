@@ -2951,7 +2951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &739595050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2968,6 +2968,8 @@ MonoBehaviour:
   maxHeight: 1.8
   bottomHeight: 0
   flooding: 0
+  timerRunning: 0
+  graceTime: 2.5
   hasFlooded: 0
   audio: {fileID: 1883735477}
   debug: 0

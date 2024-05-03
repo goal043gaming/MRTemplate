@@ -34,5 +34,6 @@ public class FloodCheck : MonoBehaviour
 
         floodObject.SetActive(true);
         flood.flooding = true;
+        flood.timerRunning = true;
     }
 }
