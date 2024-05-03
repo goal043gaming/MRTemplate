@@ -7,23 +7,18 @@ public class Bucket : MonoBehaviour
     private bool isFull = false;
 
     [SerializeField][Range(5.0f, 20.0f)] float amountToSubtract;
+    [SerializeField] GameObject waterVisual;
 
     private Flood flood;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if(transform.tag == "Flood" && !isFull)
+        if(other.transform.tag == "Flood" && !isFull)
         {
             flood = other.GetComponent<Flood>();
             flood.TakeWater(amountToSubtract);
             isFull = true;
-            print("testing");
+            waterVisual.SetActive(true);
         }
     }
 }

@@ -6,8 +6,9 @@ using UnityEngine;
 public class Flood : MonoBehaviour
 {
 
-    public float speed = 1f;
-    public float maxHeight = 5f;
+    [SerializeField] float speed = 1f;
+    [SerializeField] float maxHeight = 5f;
+    [SerializeField] float bottomHeight = 0f;
 
     [HideInInspector] public bool flooding = false;
     private bool isPlaying = false;
@@ -28,7 +29,7 @@ public class Flood : MonoBehaviour
             audio.Stop();
             hasFlooded = true;
         }
-        if(transform.position.y <= 0)
+        if(transform.position.y <= bottomHeight)
         {
             Destroy(gameObject);
         }

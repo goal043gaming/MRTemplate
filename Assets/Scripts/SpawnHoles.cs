@@ -45,7 +45,14 @@ public class SpawnHoles : MonoBehaviour
         if(amountUsed >= prefabAmount)
         {
             rayInteractor.gameObject.SetActive(false);
-            questionManager.GenerateQuestion();
+            if(questionManager = null)
+            {
+                print("Missing Question Manager");
+            }
+            else
+            {
+                questionManager.GenerateQuestion();
+            } 
         }
     }
 }
