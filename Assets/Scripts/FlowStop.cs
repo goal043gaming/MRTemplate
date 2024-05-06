@@ -51,9 +51,10 @@ public class FlowStop : MonoBehaviour
         if (ButtonEnabled)
         {
             flood.flooding = false;
+            flood.hasFlooded = true;
+            flood.canDestroy = true;
             flowHandler.allowMovement = false;
             activeEffect.Stop();
-            StartCoroutine(buttonColor());
         }
     }
 
@@ -72,11 +73,5 @@ public class FlowStop : MonoBehaviour
         }
 
         return Mathf.Clamp(value, -1f, 1f);
-    }
-
-    private IEnumerator buttonColor()
-    {
-        yield return new WaitForSeconds(2);
-
     }
 }

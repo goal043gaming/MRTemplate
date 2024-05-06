@@ -10,7 +10,6 @@ public class WaterDeposit : MonoBehaviour
     {
         if(other.transform.tag == "Water")
         {
-            Destroy(other.gameObject);
             existingBucket.EmptyBucket();
         }
     }

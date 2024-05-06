@@ -14,8 +14,8 @@ public class Flood : MonoBehaviour
     private bool isPlaying = false;
 
     public bool timerRunning;
-    [SerializeField] float graceTime;
-    private bool canDestroy = false;
+    [SerializeField] public float graceTime;
+    public bool canDestroy = false;
     [HideInInspector] public bool hasFlooded = false;
 
     [SerializeField] AudioSource audio;
@@ -50,6 +50,8 @@ public class Flood : MonoBehaviour
             TakeWater(10);
             isDebug = true;
         }
+
+        print(canDestroy);
     }
 
     public void StartAudio()
@@ -80,6 +82,7 @@ public class Flood : MonoBehaviour
             else
             {
                 timerRunning = false;
+                canDestroy = true;
                 graceTime = 0;
                 print(" testing");
             }
