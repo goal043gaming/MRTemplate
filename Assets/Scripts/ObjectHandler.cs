@@ -5,6 +5,8 @@ using UnityEngine;
 public class ObjectHandler : MonoBehaviour
 {
     [SerializeField] Material hoverMaterial;
+    [SerializeField] Material selectMaterial; 
+
     private Material startMaterial;
     private Renderer objectRenderer;
 
@@ -26,5 +28,10 @@ public class ObjectHandler : MonoBehaviour
     public void ExitHover()
     {
         objectRenderer.material = startMaterial;
+    }
+
+    public void SelectObject()
+    {
+        objectRenderer.material = selectMaterial;
     }
 }
