@@ -127,6 +127,8 @@ public class FlowHandler : MonoBehaviour
             currentObjectToMove.transform.position += currentDirection * speed / 2 * Time.deltaTime;
             currentObjectToMove.transform.localScale += currentDirection * speed * Time.deltaTime;
         }
+
+        
     }
 
     private void CurrentCheckPoint()

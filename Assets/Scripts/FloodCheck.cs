@@ -16,11 +16,15 @@ public class FloodCheck : MonoBehaviour
 
     [SerializeField] FlowStop flowStop;
 
+    [SerializeField] AudioSource waterRunning;
+    private bool isPlaying = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.transform.tag == "Flow")
         {
             flowHandler.allowMovement = false;
+            StartAudio();
             leakParticle.Play();
             flowStop.activeEffect = leakParticle;
             flowStop.ButtonEnabled = true;
@@ -35,5 +39,19 @@ public class FloodCheck : MonoBehaviour
         floodObject.SetActive(true);
         flood.flooding = true;
         flood.timerRunning = true;
+    }
+
+    private void StartAudio()
+    {
+        waterRunning.Play();
+        isPlaying = true;
+    }
+
+    private void Update()
+    {
+        if(isPlaying && !flood.flooding)
+        {
+            waterRunning.Stop();
+        }
     }
 }

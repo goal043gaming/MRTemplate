@@ -9,6 +9,8 @@ public class Bucket : MonoBehaviour
     [SerializeField][Range(5.0f, 20.0f)] float amountToSubtract;
     [SerializeField] GameObject waterVisual;
 
+    [SerializeField] AudioSource grabWaterAudio;
+
     private Flood flood;
 
     private void OnTriggerEnter(Collider other)
@@ -17,6 +19,7 @@ public class Bucket : MonoBehaviour
         {
             flood = other.GetComponent<Flood>();
             flood.TakeWater(amountToSubtract);
+            grabWaterAudio.Play();
             isFull = true;
             waterVisual.SetActive(true);
         }
