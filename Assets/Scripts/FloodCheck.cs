@@ -44,7 +44,7 @@ public class FloodCheck : MonoBehaviour
     private void StartAudio()
     {
         waterRunning.Play();
-        isPlaying = true;
+        StartCoroutine(EnableAudio());
     }
 
     private void Update()
@@ -53,5 +53,12 @@ public class FloodCheck : MonoBehaviour
         {
             waterRunning.Stop();
         }
+    }
+
+    private IEnumerator EnableAudio()
+    {
+        yield return new WaitForSeconds(timeToFlood);
+
+        isPlaying = true;
     }
 }
