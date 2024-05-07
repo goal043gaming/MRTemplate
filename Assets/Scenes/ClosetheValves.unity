@@ -1271,6 +1271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneHandling
       objectReference: {fileID: 0}
+    - target: {fileID: 3032334164665928405, guid: 66d40221d132d04499855da9ce315f20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3032334164805062083, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_Name
       value: ObjectiveCarrier
@@ -20763,12 +20767,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5171264846807754442, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+    - {fileID: 2939367299907652003, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2101315792154900770, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1109407790274764227}
+    - targetCorrespondingSourceObject: {fileID: 7025650970808197003, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1109407790274764228}
   m_SourcePrefab: {fileID: 100100000, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
 --- !u!20 &1109407790274764220 stripped
 Camera:
@@ -20808,6 +20816,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1109407790274764224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7025650970808197003, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+  m_PrefabInstance: {fileID: 1109407790274764219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1109407790274764225 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7094797105234538620, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
@@ -20844,6 +20857,43 @@ MonoBehaviour:
   anchorManager: {fileID: 1109407790274764223}
   prefabAmount: 4
   questionManager: {fileID: 0}
+--- !u!114 &1109407790274764228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109407790274764224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4f8d5173b449b4a943143f9acdf579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiToEnable: {fileID: 294949089}
+  inputEnable:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Input Enable
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: d379a946-ea5e-48c6-851f-399740390a1b
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -3049035057248204473, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  inputDisable:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Input Disable
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 530b3047-faba-44e8-825d-ba89c626b435
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5581690291832720760, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!224 &1261073044793567346
 RectTransform:
   m_ObjectHideFlags: 0

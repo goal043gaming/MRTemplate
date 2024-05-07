@@ -4010,6 +4010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneHandling
       objectReference: {fileID: 0}
+    - target: {fileID: 3032334164665928405, guid: 66d40221d132d04499855da9ce315f20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3032334164805062083, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_Name
       value: ObjectiveCarrier
@@ -4061,6 +4065,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1783a816d146cfb408e72c0404b0a561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curScene: 0
+  nextScene: 0
+  prevScene: 0
 --- !u!114 &1312419035 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7044644748622458103, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
@@ -4099,6 +4106,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8527362242434426453, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
   m_PrefabInstance: {fileID: 1109407790274764219}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1363077364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7025650970808197003, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+  m_PrefabInstance: {fileID: 1109407790274764219}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1363077370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363077364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4f8d5173b449b4a943143f9acdf579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiToEnable: {fileID: 1301800687}
+  inputEnable:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Input Enable
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 90a50b3c-9862-4e5f-a08f-4f3c34aa6e46
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -3049035057248204473, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  inputDisable:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Input Disable
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 88cd2aa4-0224-4ae3-aed4-333b7b322dfc
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5581690291832720760, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &1524249991
 GameObject:
   m_ObjectHideFlags: 0
@@ -8016,13 +8065,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2939367299907652003, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8527362242434426453, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 253330327}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7025650970808197003, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1363077370}
   m_SourcePrefab: {fileID: 100100000, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
 --- !u!20 &1109407790274764220 stripped
 Camera:

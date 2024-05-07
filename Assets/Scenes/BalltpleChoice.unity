@@ -1591,6 +1591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneHandling
       objectReference: {fileID: 0}
+    - target: {fileID: 3032334164665928405, guid: 66d40221d132d04499855da9ce315f20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3032334164805062083, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_Name
       value: ObjectiveCarrier
@@ -1717,6 +1721,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5909398001603780732, guid: 58011bca9681c484080084eccc4cb150, type: 3}
   m_PrefabInstance: {fileID: 453753817}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &541408807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7025650970808197003, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+  m_PrefabInstance: {fileID: 1109407790274764219}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &541408808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541408807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4f8d5173b449b4a943143f9acdf579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiToEnable: {fileID: 504465321}
+  inputEnable:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Input Enable
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: bac70610-d79c-491d-8bbc-642c5c69e7e5
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -3049035057248204473, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  inputDisable:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Input Disable
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: cb5c50fe-d569-4cde-825f-8e5f35a0dfe9
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5581690291832720760, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &623787386
 GameObject:
   m_ObjectHideFlags: 0
@@ -6000,7 +6046,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2939367299907652003, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5051522684737032414, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
     - {fileID: 4778049141232186517, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
@@ -6009,6 +6056,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2101315792154900770, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1109407790274764226}
+    - targetCorrespondingSourceObject: {fileID: 7025650970808197003, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 541408808}
   m_SourcePrefab: {fileID: 100100000, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
 --- !u!20 &1109407790274764220 stripped
 Camera:
