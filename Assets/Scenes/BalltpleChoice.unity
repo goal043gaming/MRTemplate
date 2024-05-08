@@ -5560,20 +5560,40 @@ PrefabInstance:
       value: ObjectiveHandler Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8883786812887207179, guid: 55821c87ae286d04f9f5a823d4a91e2d, type: 3}
+      propertyPath: m_Target
+      value: 
+      objectReference: {fileID: 248358149}
+    - target: {fileID: 8883786812887207179, guid: 55821c87ae286d04f9f5a823d4a91e2d, type: 3}
       propertyPath: m_MovementSpeed
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8883786812887207179, guid: 55821c87ae286d04f9f5a823d4a91e2d, type: 3}
       propertyPath: m_TargetOffset.x
-      value: -0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8883786812887207179, guid: 55821c87ae286d04f9f5a823d4a91e2d, type: 3}
       propertyPath: m_TargetOffset.y
-      value: -0.5
+      value: -0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8883786812887207179, guid: 55821c87ae286d04f9f5a823d4a91e2d, type: 3}
       propertyPath: m_TargetOffset.z
-      value: 0.6
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883786812887207179, guid: 55821c87ae286d04f9f5a823d4a91e2d, type: 3}
+      propertyPath: m_MaxAngleAllowed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883786812887207179, guid: 55821c87ae286d04f9f5a823d4a91e2d, type: 3}
+      propertyPath: m_MinAngleAllowed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883786812887207179, guid: 55821c87ae286d04f9f5a823d4a91e2d, type: 3}
+      propertyPath: m_RotationFollowMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883786812887207179, guid: 55821c87ae286d04f9f5a823d4a91e2d, type: 3}
+      propertyPath: m_MovementSpeedVariancePercentage
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
