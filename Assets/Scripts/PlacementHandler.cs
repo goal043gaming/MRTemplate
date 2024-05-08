@@ -111,7 +111,7 @@ public class PlacementHandler : MonoBehaviour
         {
            lInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
 
-           Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(-hit.normal));
+           Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(hit.normal));
            anchorManager.AddAnchor(hitpose);
 
            placementSound.Play();
@@ -214,7 +214,7 @@ public class PlacementHandler : MonoBehaviour
         {
             lInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
 
-            Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(-hit.normal));
+            Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(hit.normal));
             anchorManager.AddAnchor(hitpose);
 
             spawnPrefab.transform.position = hitpose.position;
@@ -225,6 +225,7 @@ public class PlacementHandler : MonoBehaviour
         {
             allowPlacement = false;
             objAmount.text = "You've placed all of the objects";
+            spawnPrefab.SetActive(false);
         }
        
     }
