@@ -8,51 +8,57 @@ using UnityEngine.XR.ARSubsystems;
 public class SpawnHoles : MonoBehaviour
 {
     [SerializeField] GameObject[] prefabToSpawn;
-
     [SerializeField] XRRayInteractor rayInteractor;
     [SerializeField] ARAnchorManager anchorManager;
-
+    [SerializeField] Collider exclusionCollider; 
     [SerializeField] int prefabAmount = 4;
     private int amountUsed = 0;
     private int index = 0;
-
     [SerializeField] QuestionManager questionManager;
 
-    // Start is called before the first frame update
     void Start()
     {
-        rayInteractor.selectEntered.AddListener(spawnPrefab);
+        rayInteractor.selectEntered.AddListener(SpawnPrefab);
     }
 
-    public void spawnPrefab(BaseInteractionEventArgs args)
+    void SpawnPrefab(BaseInteractionEventArgs args)
     {
-        if(amountUsed <= prefabAmount)
+        if (amountUsed < prefabAmount)
         {
             rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
-            Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(hit.normal));
+            Pose hitPose = new Pose(hit.point, Quaternion.LookRotation(hit.normal));
 
-            var result = anchorManager.AddAnchor(hitpose);
-
-            //Instantiate(prefabToSpawn[index], hitpose.position, hitpose.rotation);
-            prefabToSpawn[index].SetActive(true);
-            prefabToSpawn[index].transform.position = hitpose.position;
-            prefabToSpawn[index].transform.rotation = hitpose.rotation;
-
-            index++;
-            amountUsed++;
-
+            if (!IsInsideCollider(hitPose.position, exclusionCollider))
+            {
+                var result = anchorManager.AddAnchor(hitPose);
+                prefabToSpawn[index].SetActive(true);
+                prefabToSpawn[index].transform.position = hitPose.position;
+                prefabToSpawn[index].transform.rotation = hitPose.rotation;
+                index++;
+                amountUsed++;
+            }
+            else
+            {
+                Debug.Log("Cannot spawn within the exclusion collider.");
+            }
         }
-        if(amountUsed >= prefabAmount)
+
+        if (amountUsed >= prefabAmount)
         {
             rayInteractor.gameObject.SetActive(false);
-            if(questionManager = null)
+            if (questionManager == null)
             {
-                print("Missing Question Manager");
+                Debug.Log("Missing Question Manager");
             }
             else
             {
                 questionManager.GenerateQuestion();
-            } 
+            }
         }
+    }
+
+    bool IsInsideCollider(Vector3 point, Collider collider)
+    {
+        return collider.bounds.Contains(point);
     }
 }
