@@ -29,7 +29,7 @@ public class SpawnHoles : MonoBehaviour
         if(amountUsed <= prefabAmount)
         {
             rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit);
-            Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(-hit.normal));
+            Pose hitpose = new Pose(hit.point, Quaternion.LookRotation(hit.normal));
 
             var result = anchorManager.AddAnchor(hitpose);
 
