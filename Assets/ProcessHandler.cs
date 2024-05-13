@@ -8,9 +8,10 @@ public class ProcessHandler : MonoBehaviour
 {
     public StepProcess process;
     public TMP_Text stepText;
-    public Image stepImage;
 
     private int currentStepIndex = 0;
+
+    public bool debug = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,6 @@ public class ProcessHandler : MonoBehaviour
         {
             Step currentStep = process.steps[index];
             stepText.text = currentStep.stepDescription;
-            stepImage = currentStep.stepImage;
         }
         else
         {
@@ -36,5 +36,13 @@ public class ProcessHandler : MonoBehaviour
     {
         currentStepIndex++;
         DisplayStep(currentStepIndex);
+    }
+
+    private void FixedUpdate()
+    {
+       if(debug)
+        {
+            NextStep();
+        }
     }
 }

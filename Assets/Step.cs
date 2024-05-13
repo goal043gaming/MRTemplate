@@ -7,6 +7,5 @@ using UnityEngine.UI;
 public class Step : ScriptableObject
 {
     public string stepDescription;
-    public Image stepImage;
     public bool stepIsActive;
 }
