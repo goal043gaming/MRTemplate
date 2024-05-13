@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Object : MonoBehaviour
+[CreateAssetMenu(fileName = "Objects", menuName = "Objects")]
+public class Object : ScriptableObject
 {
-
-    public string identifier;
     public string attachedObjective;
-    public Image attachedImage;
+    public Sprite attachedSprite;
+    public bool hasMicrogame;
 
     [Header("Microgames")]
     public FlowHandler flowHandler;

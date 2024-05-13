@@ -9,6 +9,7 @@ public class Process : MonoBehaviour
 {
     public ObjectList objectList;
     public TMP_Text objectText;
+    public Image objectImage;
 
     private Image prevImage;
     private int currentStepIndex;
@@ -26,16 +27,7 @@ public class Process : MonoBehaviour
         {
             Object currentStep = objectList.objects[index];
             objectText.text = currentStep.attachedObjective;
-
-            Image curImage = currentStep.attachedImage;
-            curImage.enabled = true;
-
-            if(prevImage != null)
-            {
-                prevImage.enabled = false;
-            }
-
-            prevImage = curImage;
+            objectImage.sprite = currentStep.attachedSprite;
         }
         else
         {
