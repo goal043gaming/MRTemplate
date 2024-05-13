@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c4ea388b37959a4fa0a1308fb5d9212, type: 3}
   m_Name: SecondStep
   m_EditorClassIdentifier: 
-  stepDescription: 
+  stepDescription: This is the second step
   stepIsActive: 0
+  stepObject: {fileID: 0}

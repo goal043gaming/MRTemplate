@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepDescription: This is the first step
   stepIsActive: 0
+  imageIdentifier: blahblah

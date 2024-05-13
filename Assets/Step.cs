@@ -8,4 +8,5 @@ public class Step : ScriptableObject
 {
     public string stepDescription;
     public bool stepIsActive;
+    public string imageIdentifier;
 }

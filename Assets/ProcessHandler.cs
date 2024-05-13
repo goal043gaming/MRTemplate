@@ -25,6 +25,12 @@ public class ProcessHandler : MonoBehaviour
         {
             Step currentStep = process.steps[index];
             stepText.text = currentStep.stepDescription;
+
+
+            print(currentStep.imageIdentifier);
+
+            GameObject linkedObject = GameObject.Find(currentStep.imageIdentifier);
+            linkedObject.GetComponent<Image>().enabled = true;
         }
         else
         {
