@@ -9,6 +9,7 @@ public class Object : ScriptableObject
     public string attachedObjective;
     public Sprite attachedSprite;
     public bool hasMicrogame;
+    public string identifier;
 
     [Header("Microgames")]
     public FlowHandler flowHandler;

@@ -10,9 +10,11 @@ public class Process : MonoBehaviour
     public ObjectList objectList;
     public TMP_Text objectText;
     public Image objectImage;
+    public GameObject[] linkedObjects;
 
     private Image prevImage;
     private int currentStepIndex;
+    private ObjectState objectstate;
 
     public bool debug;
 
@@ -28,6 +30,17 @@ public class Process : MonoBehaviour
             Object currentStep = objectList.objects[index];
             objectText.text = currentStep.attachedObjective;
             objectImage.sprite = currentStep.attachedSprite;
+
+            for(int i = 0; i < linkedObjects.Length; i++)
+            {
+                objectstate = linkedObjects[i].GetComponent<ObjectState>();
+                string currentIdentifier = objectstate.uniqueIdentifier;
+
+                if(currentStep.identifier == currentIdentifier)
+                {
+                    print("testing");
+                }
+            }
         }
         else
         {

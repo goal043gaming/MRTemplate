@@ -15,5 +15,6 @@ MonoBehaviour:
   attachedObjective: Currently Testing functionality 2
   attachedSprite: {fileID: 21300000, guid: a18f69464d4032d41a019152e94f2295, type: 3}
   hasMicrogame: 0
+  identifier: Italy
   flowHandler: {fileID: 0}
   questionManager: {fileID: 0}
