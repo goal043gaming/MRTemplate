@@ -9,6 +9,7 @@ public class ProcessHandler : MonoBehaviour
     public StepProcess process;
     public TMP_Text stepText;
 
+    private GameObject prevGameObject;
     private int currentStepIndex = 0;
 
     public bool debug = false;
@@ -31,6 +32,13 @@ public class ProcessHandler : MonoBehaviour
 
             GameObject linkedObject = GameObject.Find(currentStep.imageIdentifier);
             linkedObject.GetComponent<Image>().enabled = true;
+
+            if(prevGameObject != null)
+            {
+                prevGameObject.GetComponent<Image>().enabled = false;
+            }
+
+            prevGameObject = linkedObject;
         }
         else
         {

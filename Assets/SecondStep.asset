@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepDescription: This is the second step
   stepIsActive: 0
-  stepObject: {fileID: 0}
+  imageIdentifier: blahblah2
