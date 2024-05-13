@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Object : MonoBehaviour
 {
+
+    public string identifier;
     public string attachedObjective;
     public Image attachedImage;
 
