@@ -38,7 +38,8 @@ public class Process : MonoBehaviour
 
                 if(currentStep.identifier == currentIdentifier)
                 {
-                    print("testing");
+                    objectstate.isActive = true;
+                    break;
                 }
             }
         }

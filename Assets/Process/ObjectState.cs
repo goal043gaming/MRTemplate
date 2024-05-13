@@ -7,15 +7,12 @@ public class ObjectState : MonoBehaviour
     public bool isActive;
     public string uniqueIdentifier;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] Process process;
+    public void HasSelected()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(isActive)
+        {
+            process.NextStep();
+        }
     }
 }
