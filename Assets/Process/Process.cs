@@ -15,6 +15,7 @@ public class Process : MonoBehaviour
     private Image prevImage;
     private int currentStepIndex;
     private ObjectState objectstate;
+    private Object currentStep;
 
     public bool debug;
 
@@ -25,11 +26,16 @@ public class Process : MonoBehaviour
 
     public void DisplayStep(int index)
     {
-        if(index <= objectList.objects.Count)
+        if(index < objectList.objects.Count)
         {
-            Object currentStep = objectList.objects[index];
+            currentStep = objectList.objects[index];
             objectText.text = currentStep.attachedObjective;
             objectImage.sprite = currentStep.attachedSprite;
+
+            if(currentStep.hasMicrogame)
+            {
+                StartMicrogame();
+            }
 
             for(int i = 0; i < linkedObjects.Length; i++)
             {
@@ -60,6 +66,18 @@ public class Process : MonoBehaviour
         if (debug)
         {
             NextStep();
+        }
+    }
+
+    public void StartMicrogame()
+    {
+        if(currentStep.flowHandler != null)
+        {
+            print("Start the flow");
+        }
+        if(currentStep.questionManager != null)
+        {
+            print("Start the throwing");
         }
     }
 }
