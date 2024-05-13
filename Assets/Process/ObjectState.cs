@@ -1,21 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectState : MonoBehaviour
 {
-    public bool isActive;
+    public bool isActive,isCorrect, isFalse;
     public string uniqueIdentifier;
     public GameObject FeedbackWindow;
+    public TMP_Text correctText;
 
     [SerializeField] Process process;
     public void HasSelected()
     {
-        if(isActive)
+        if(isCorrect)
         {
             process.NextStep();
-            isActive = false;
+            correctText.text = "Correct!";
+            isCorrect = false;
             FeedbackWindow.SetActive(true);
+            StartCoroutine(DisableWindow());
+        }
+        else
+        {
+            process.NextStep();
+            correctText.text = "False!";
+            FeedbackWindow?.SetActive(true);
             StartCoroutine(DisableWindow());
         }
     }

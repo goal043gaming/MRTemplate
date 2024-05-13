@@ -46,7 +46,7 @@ public class Process : MonoBehaviour
 
                 if(currentStep.identifier == currentIdentifier)
                 {
-                    objectstate.isActive = true;
+                    objectstate.isCorrect = true;
                     break;
                 }
             }
