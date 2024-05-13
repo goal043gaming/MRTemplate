@@ -51,13 +51,15 @@ public class FlowHandler : MonoBehaviour
 
 
         //checkPassed = checkPoints[0].GetComponent<FlowCheckpoints>();
-
+    }
+    
+    public void StartFlow()
+    {
         allowMovement = true;
         currentObjectToMove = objectsToMove[0];
         currentTarget = startingTarget;
 
         objectiveHandler.UpdateText(objectivesToDisplay[0]);
-
     }
     private void Update()
     {
