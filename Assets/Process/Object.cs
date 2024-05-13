@@ -11,6 +11,8 @@ public class Object : ScriptableObject
     public bool hasMicrogame;
     public string identifier;
 
+    public string feedbackText;
+
     [Header("Microgames")]
     public FlowHandler flowHandler;
     public QuestionManager questionManager;

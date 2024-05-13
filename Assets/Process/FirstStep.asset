@@ -16,5 +16,6 @@ MonoBehaviour:
   attachedSprite: {fileID: 21300000, guid: 54f9401ae7792314d88167de74e06ff0, type: 3}
   hasMicrogame: 0
   identifier: Cuba
+  feedbackText: Ja, dat is de juiste aflsuiter.
   flowHandler: {fileID: 0}
   questionManager: {fileID: 0}

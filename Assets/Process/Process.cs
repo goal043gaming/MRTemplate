@@ -11,6 +11,7 @@ public class Process : MonoBehaviour
     public TMP_Text objectText;
     public Image objectImage;
     public GameObject[] linkedObjects;
+    public TMP_Text feedbackText;
 
     private Image prevImage;
     private int currentStepIndex;
@@ -31,6 +32,7 @@ public class Process : MonoBehaviour
             currentStep = objectList.objects[index];
             objectText.text = currentStep.attachedObjective;
             objectImage.sprite = currentStep.attachedSprite;
+            feedbackText.text = currentStep.feedbackText;
 
             if(currentStep.hasMicrogame)
             {
