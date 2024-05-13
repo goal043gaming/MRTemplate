@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2187eefdfdc2914380a45f3c439b195, type: 3}
-  m_Name: MainProcess
+  m_Script: {fileID: 11500000, guid: ad2b849c21864b84dbb5599a7675a715, type: 3}
+  m_Name: Objects
   m_EditorClassIdentifier: 
-  steps: []
+  objects:
+  - {fileID: 2581313670603796221, guid: b4fb7a551254f8241ba7925cc7080dc9, type: 3}
+  - {fileID: 7573453837166876232, guid: 56d489b8e2129464f90e8dd8a56664e4, type: 3}
