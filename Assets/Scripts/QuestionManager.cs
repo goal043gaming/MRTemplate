@@ -13,7 +13,7 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] SpawnBall ballSpawner;
     [SerializeField] AudioSource writingQuestion;
 
-    public int currentQuestion;
+    private int currentQuestionIndex = 0;
     public bool t_Correct;
 
     [Header("Objectives")]
@@ -24,10 +24,16 @@ public class QuestionManager : MonoBehaviour
     {
         GenerateQuestion();
     }
+
     public void GenerateQuestion()
     {
-        currentQuestion = Random.Range(0, qAHolder.Count);
-        questionText.text = qAHolder[currentQuestion].questions;
+        if(currentQuestionIndex >= qAHolder.Count)
+        {
+            print("No more questions available.");
+            return;
+        }
+
+        questionText.text = qAHolder[currentQuestionIndex].questions;
 
         writingQuestion.Play();
         SetAnswers();
@@ -37,12 +43,12 @@ public class QuestionManager : MonoBehaviour
 
     public void SetAnswers()
     {
-        for(int i = 0; i < options.Length ; i++)
+        for(int i = 0; i < options.Length; i++)
         {
             options[i].GetComponent<AnswerManager>().isCorrect = false;
-            answerText[i].text = qAHolder[currentQuestion].answers[i];
+            answerText[i].text = qAHolder[currentQuestionIndex].answers[i];
 
-            if (qAHolder[currentQuestion].correctAnswer == i+1)
+            if(qAHolder[currentQuestionIndex].correctAnswer == i + 1)
             {
                 options[i].GetComponent<AnswerManager>().isCorrect = true;
             }
@@ -57,7 +63,7 @@ public class QuestionManager : MonoBehaviour
     public IEnumerator Correcto()
     {
         yield return new WaitForSeconds(1);
-        qAHolder.RemoveAt(currentQuestion);
+        currentQuestionIndex++; 
         GenerateQuestion();
     }
 
