@@ -64,7 +64,7 @@ public class QuestionManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         currentQuestionIndex++; 
-        GenerateQuestion();
+        //GenerateQuestion();
     }
 
     private void Update()

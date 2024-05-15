@@ -42,19 +42,29 @@ public class Process : MonoBehaviour
 
                 if(currentStep.hasMicrogame)
                 {
-                    if(currentStep.identifier == flowIdentifier)
+                    if(currentStep.ballGame)
                     {
-                        linkedObjects[i].GetComponent<FlowHandler>().StartFlow();
-                        objectstate.isActive = true;
-                        break;
+                        if(currentStep.identifier == currentIdentifier)
+                        {
+                            print(linkedObjects[i]);
+                            QuestionManager genQuestion = linkedObjects[i].GetComponent<QuestionManager>();
+                            genQuestion.GenerateQuestion();
+                            objectstate.isActive = true;
+                            print("TEST");
+                            break;
+                        }
                     }
-                    else if(currentStep.identifier == ballIdentifier)
+                    if(currentStep.flowGame)
                     {
-                        linkedObjects[i].GetComponent<QuestionManager>().GenerateQuestion();
-                        objectstate.isActive = true;
-                        break;
+                        if (currentStep.identifier == currentIdentifier)
+                        {
+                            linkedObjects[i].GetComponent<FlowHandler>().StartFlow();
+                            objectstate.isActive = true;
+                            break;
+                        }
                     }
                 }
+
                 if(currentStep.identifier == currentIdentifier)
                 {
                     objectstate.isCorrect = true;
@@ -80,10 +90,5 @@ public class Process : MonoBehaviour
         {
             NextStep();
         }
-    }
-
-    public void StartMicrogame()
-    {
-        
     }
 }
