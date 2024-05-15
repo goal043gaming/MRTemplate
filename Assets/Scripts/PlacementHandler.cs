@@ -22,6 +22,7 @@ public class PlacementHandler : MonoBehaviour
 
     private bool allowPlacement = false;
     private int selectedObjectNumber;
+    private int totalAmount;
 
     [SerializeField] TMP_Text objAmount;
     [SerializeField] TMP_Text objName;
@@ -41,6 +42,8 @@ public class PlacementHandler : MonoBehaviour
     [SerializeField] XRRayInteractor rInteractor;
 
     [SerializeField] ARAnchorManager anchorManager;
+
+    [SerializeField] Process process;
 
     [Header("Sounds")]
     [SerializeField] AudioSource placementSound;
@@ -68,6 +71,8 @@ public class PlacementHandler : MonoBehaviour
         lInteractor.selectEntered.AddListener(Spawn);
 
         objective.UpdateText(objectivesToDisplay[0]);
+
+        totalAmount = spheresToPlace + cubesToPlace + cylindersToPlace + plantsToPlace;
     }
 
     // Update is called once per frame
@@ -118,6 +123,7 @@ public class PlacementHandler : MonoBehaviour
            Instantiate(spawnPrefab, hitpose.position, hitpose.rotation);
 
            UpdateNumber();
+           CheckAmount();
         }
     }
 
@@ -242,6 +248,14 @@ public class PlacementHandler : MonoBehaviour
         if(hapIntensity > 0)
         {
             controller.SendHapticImpulse(hapIntensity, hapDuration);
+        }
+    }
+
+    private void CheckAmount()
+    {
+        if(totalAmount == 0)
+        {
+            process.DisplayStep(0);
         }
     }
 }
