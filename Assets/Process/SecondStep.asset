@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedObjective: Currently Testing functionality 2
   attachedSprite: {fileID: 21300000, guid: a18f69464d4032d41a019152e94f2295, type: 3}
-  hasMicrogame: 1
   identifier: Italy
-  flowHandler: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
-  questionManager: {fileID: 0}
+  feedbackText: 
+  hasMicrogame: 0
+  flowGame: 0
+  ballGame: 0

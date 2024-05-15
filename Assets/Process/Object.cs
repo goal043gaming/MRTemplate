@@ -8,14 +8,14 @@ public class Object : ScriptableObject
 {
     public string attachedObjective;
     public Sprite attachedSprite;
-    public bool hasMicrogame;
     public string identifier;
 
     public string feedbackText;
 
     [Header("Microgames")]
-    public FlowHandler flowHandler;
-    public QuestionManager questionManager;
+    public bool hasMicrogame;
+    public bool flowGame;
+    public bool ballGame;
 
     // Start is called before the first frame update
     void Start()
