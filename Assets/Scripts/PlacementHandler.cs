@@ -32,11 +32,13 @@ public class PlacementHandler : MonoBehaviour
     [SerializeField] int cubesToPlace;
     [SerializeField] int cylindersToPlace;
     [SerializeField] int plantsToPlace;
+    [SerializeField] int bucketsToPlace;
 
     [SerializeField] string objectName1;
     [SerializeField] string objectName2;
     [SerializeField] string objectName3;
     [SerializeField] string objectName4;
+    [SerializeField] string objectName5;
 
     [SerializeField] XRRayInteractor lInteractor;
     [SerializeField] XRRayInteractor rInteractor;
@@ -174,6 +176,15 @@ public class PlacementHandler : MonoBehaviour
 
             objAmount.text = "Object to place: " + amountToPlace;
         }
+        else if (currentObject.name == objectName5)
+        {
+            amountToPlace = bucketsToPlace;
+            spawnPrefab = placeObjects[4];
+
+            selectedObjectNumber = 4;
+
+            objAmount.text = "Object to place: " + amountToPlace;
+        }
     }
 
     private void EnablePlacement()
@@ -217,6 +228,11 @@ public class PlacementHandler : MonoBehaviour
         if (selectedObjectNumber == 3)
         {
             plantsToPlace--;
+            amountToPlace--;
+        }
+        if (selectedObjectNumber == 4)
+        {
+            bucketsToPlace--;
             amountToPlace--;
         }
 
