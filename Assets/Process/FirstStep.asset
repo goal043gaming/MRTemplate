@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8a21b977c29ed46b1b6c9a0e663e70, type: 3}
   m_Name: FirstStep
   m_EditorClassIdentifier: 
-  attachedObjective: Currently Testing functionality
+  attachedObjective: Selecteer het eerste object
   attachedSprite: {fileID: 21300000, guid: 54f9401ae7792314d88167de74e06ff0, type: 3}
-  hasMicrogame: 0
   identifier: Cuba
   feedbackText: Ja, dat is de juiste aflsuiter.
-  flowHandler: {fileID: 0}
-  questionManager: {fileID: 0}
+  hasMicrogame: 0
+  flowGame: 0
+  ballGame: 0
