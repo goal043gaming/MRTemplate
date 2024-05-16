@@ -22,13 +22,13 @@ public class ObjectState : MonoBehaviour
             FeedbackWindow.SetActive(true);
             StartCoroutine(DisableWindow());
         }
-        else
+       /* else
         {
             process.NextStep();
             correctText.text = "False!";
             FeedbackWindow?.SetActive(true);
             StartCoroutine(DisableWindow());
-        }
+        } */
     }
 
     private IEnumerator DisableWindow()

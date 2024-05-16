@@ -20,6 +20,8 @@ public class QuestionManager : MonoBehaviour
     [SerializeField] ObjectiveHandler objective;
     [SerializeField] string[] objectivesToDisplay;
 
+    [SerializeField] Process process;
+
     public void Start()
     {
         GenerateQuestion();
@@ -63,8 +65,9 @@ public class QuestionManager : MonoBehaviour
     public IEnumerator Correcto()
     {
         yield return new WaitForSeconds(1);
-        currentQuestionIndex++; 
+        currentQuestionIndex++;
         //GenerateQuestion();
+        process.NextStep();
     }
 
     private void Update()

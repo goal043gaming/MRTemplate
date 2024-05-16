@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MicroStep
   m_EditorClassIdentifier: 
   attachedObjective: Testing function micro
-  attachedSprite: {fileID: 21300000, guid: 9d8044d906b81524f91dc58be9f653f3, type: 3}
+  attachedSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   identifier: Spain
   feedbackText: idfk
   hasMicrogame: 1
