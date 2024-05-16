@@ -24,7 +24,7 @@ public class QuestionManager : MonoBehaviour
 
     public void Start()
     {
-        GenerateQuestion();
+        //GenerateQuestion();
     }
 
     public void GenerateQuestion()

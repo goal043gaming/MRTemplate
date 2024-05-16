@@ -49,13 +49,13 @@ public class HoleDetection : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    /* private void OnEnable()
     {
         var test = Instantiate(pointBooster, transform.position+(-transform.forward*1), transform.rotation);
         playerPos = GameObject.FindGameObjectWithTag("MainCamera");
         test.transform.LookAt(playerPos.transform.position);
         text.gameObject.SetActive(false);
-    }
+    } */
 
     private IEnumerator TextTimer(int Timer)
     {

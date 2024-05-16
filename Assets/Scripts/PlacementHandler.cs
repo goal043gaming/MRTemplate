@@ -33,12 +33,18 @@ public class PlacementHandler : MonoBehaviour
     [SerializeField] int cylindersToPlace;
     [SerializeField] int plantsToPlace;
     [SerializeField] int bucketsToPlace;
+    [SerializeField] int targetBToPlace;
+    [SerializeField] int targetCToPlace;
+    [SerializeField] int targetDToPlace;
 
     [SerializeField] string objectName1;
     [SerializeField] string objectName2;
     [SerializeField] string objectName3;
     [SerializeField] string objectName4;
     [SerializeField] string objectName5;
+    [SerializeField] string objectName6;
+    [SerializeField] string objectName7;
+    [SerializeField] string objectName8;
 
     [SerializeField] XRRayInteractor lInteractor;
     [SerializeField] XRRayInteractor rInteractor;
@@ -185,6 +191,33 @@ public class PlacementHandler : MonoBehaviour
 
             objAmount.text = "Object to place: " + amountToPlace;
         }
+        else if (currentObject.name == objectName6)
+        {
+            amountToPlace = targetBToPlace;
+            spawnPrefab = placeObjects[5];
+
+            selectedObjectNumber = 5;
+
+            objAmount.text = "Object to place: " + amountToPlace;
+        }
+        else if (currentObject.name == objectName7)
+        {
+            amountToPlace = targetCToPlace;
+            spawnPrefab = placeObjects[6];
+
+            selectedObjectNumber = 6;
+
+            objAmount.text = "Object to place: " + amountToPlace;
+        }
+        else if (currentObject.name == objectName8)
+        {
+            amountToPlace = targetDToPlace;
+            spawnPrefab = placeObjects[7];
+
+            selectedObjectNumber = 7;
+
+            objAmount.text = "Object to place: " + amountToPlace;
+        }
     }
 
     private void EnablePlacement()
@@ -233,6 +266,21 @@ public class PlacementHandler : MonoBehaviour
         if (selectedObjectNumber == 4)
         {
             bucketsToPlace--;
+            amountToPlace--;
+        }
+        if (selectedObjectNumber == 5)
+        {
+            targetBToPlace--;
+            amountToPlace--;
+        }
+        if (selectedObjectNumber == 6)
+        {
+            targetCToPlace--;
+            amountToPlace--;
+        }
+        if (selectedObjectNumber == 7)
+        {
+            targetDToPlace--;
             amountToPlace--;
         }
 
