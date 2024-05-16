@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8a21b977c29ed46b1b6c9a0e663e70, type: 3}
   m_Name: ThirdStep
   m_EditorClassIdentifier: 
-  attachedObjective: Currently Testing functionality 3
+  attachedObjective: Selecteer de juiste afsluiter
   attachedSprite: {fileID: 21300000, guid: 0d77f64dcf23ba448b2a63ad6f4c50c2, type: 3}
-  hasMicrogame: 0
-  identifier: France
+  identifier: Cuba
   feedbackText: Ja, dat is de juiste aflsuiter.
-  flowHandler: {fileID: 0}
-  questionManager: {fileID: 0}
+  hasMicrogame: 0
+  flowGame: 0
+  ballGame: 0

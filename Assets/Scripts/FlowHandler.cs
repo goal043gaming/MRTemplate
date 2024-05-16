@@ -51,6 +51,7 @@ public class FlowHandler : MonoBehaviour
 
 
         //checkPassed = checkPoints[0].GetComponent<FlowCheckpoints>();
+        StartFlow();
     }
     
     public void StartFlow()
