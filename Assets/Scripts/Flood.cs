@@ -40,7 +40,7 @@ public class Flood : MonoBehaviour
 
         if(flooding)
         {
-            StartAudio();
+            //StartAudio();
             StartTimer();
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
