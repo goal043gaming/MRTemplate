@@ -562,8 +562,8 @@ MonoBehaviour:
   isCorrect: 0
   isFalse: 0
   uniqueIdentifier: Cuba
-  FeedbackWindow: {fileID: 0}
-  correctText: {fileID: 0}
+  FeedbackWindow: {fileID: 432467748}
+  correctText: {fileID: 1038682725}
   process: {fileID: 2135696092}
 --- !u!114 &78325420
 MonoBehaviour:
@@ -2184,7 +2184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &432467749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26499,8 +26499,8 @@ MonoBehaviour:
   isCorrect: 0
   isFalse: 0
   uniqueIdentifier: France
-  FeedbackWindow: {fileID: 0}
-  correctText: {fileID: 0}
+  FeedbackWindow: {fileID: 432467748}
+  correctText: {fileID: 1038682725}
   process: {fileID: 2135696092}
 --- !u!65 &2041840697
 BoxCollider:
@@ -27269,6 +27269,7 @@ MonoBehaviour:
   - {fileID: 78325414}
   - {fileID: 1680316414}
   - {fileID: 1584207207}
+  - {fileID: 2041840693}
   feedbackText: {fileID: 2100130711}
   flowIdentifier: Bangladesh
   ballIdentifier: Spain

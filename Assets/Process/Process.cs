@@ -23,7 +23,7 @@ public class Process : MonoBehaviour
 
     private void Start()
     {
-        DisplayStep(currentStepIndex);
+        //DisplayStep(currentStepIndex);
     }
 
     public void DisplayStep(int index)

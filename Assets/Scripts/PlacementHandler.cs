@@ -54,6 +54,7 @@ public class PlacementHandler : MonoBehaviour
 
     [Header("Debug Settings")]
     public bool testingText;
+    public bool testingProcess;
     [SerializeField] GameObject prevObject;
 
     [Header("Haptic Feedback")]
@@ -82,8 +83,16 @@ public class PlacementHandler : MonoBehaviour
         {
             objAmount.text = "Amount to place =" + spheresToPlace;
         }
+        if(testingProcess)
+        {
+            totalAmount = 0;
+            CheckAmount();
+        }
 
-        ShowPreview();
+        if(allowPlacement)
+        {
+            ShowPreview();
+        } 
     }
 
     public void ObjectGrabbed()
@@ -211,6 +220,7 @@ public class PlacementHandler : MonoBehaviour
             amountToPlace--;
         }
 
+        totalAmount--;
         objAmount.text = "Objects to place: " + amountToPlace;
     }
 
@@ -255,6 +265,7 @@ public class PlacementHandler : MonoBehaviour
     {
         if(totalAmount == 0)
         {
+            print("TESTING");
             process.DisplayStep(0);
         }
     }
