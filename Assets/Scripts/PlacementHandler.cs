@@ -81,7 +81,7 @@ public class PlacementHandler : MonoBehaviour
 
         objective.UpdateText(objectivesToDisplay[0]);
 
-        totalAmount = spheresToPlace + cubesToPlace + cylindersToPlace + plantsToPlace + bucketsToPlace + targetBToPlace + targetCToPlace + targetDToPlace;
+        totalAmount = plantsToPlace;
     }
 
     // Update is called once per frame
