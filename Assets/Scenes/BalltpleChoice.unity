@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31461963, g: 0.5517244, b: 0.8219393, a: 1}
+  m_IndirectSpecularColor: {r: 0.31453457, g: 0.55162674, b: 0.82192343, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1228,6 +1228,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7432980434244791046}
     - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
       propertyPath: options.Array.data[0]
       value: 
       objectReference: {fileID: 2087443556}
@@ -1264,8 +1268,97 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[2].questions
+      value: Waarvoor heeft Loop 1 gas nodig?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[3].questions
+      value: Welke afsluiters moeten open staan om gas naar de ketel te krijgen?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[4].questions
+      value: De druk in Loop 1 moet tussen 0,8 en 1,5 bar zijn, dit lees je op Pli05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
       propertyPath: objectivesToDisplay.Array.data[0]
       value: Throw the ball at the right answer!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[2].correctAnswer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[3].correctAnswer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[4].correctAnswer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[2].answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[3].answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[4].answers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[0].answers.Array.data[1]
+      value: Nabootsing van een proces zoals deze in het groot in de procesindustrie
+        te vinden is
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[2].answers.Array.data[0]
+      value: Om te verbranden in de verwarmingsketel voor warmte
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[2].answers.Array.data[1]
+      value: Om ervoor te zorgen dat het lokaal goed verwarmd wordt
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[2].answers.Array.data[2]
+      value: Leidingen open te houde en zorgen voor stroming
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[2].answers.Array.data[3]
+      value: Om te controleren of er geen lekkages zijn
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[3].answers.Array.data[0]
+      value: XEV101
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[3].answers.Array.data[1]
+      value: Afsluiter 15 & 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[3].answers.Array.data[2]
+      value: Afsluiter 1 & 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[3].answers.Array.data[3]
+      value: Afsluiter 13 & 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[4].answers.Array.data[0]
+      value: PLI05 is geen niveaumeter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[4].answers.Array.data[1]
+      value: PLI05 heeft geen functie
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[4].answers.Array.data[2]
+      value: PLI05 is een temperatuurmeter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: qAHolder.Array.data[4].answers.Array.data[3]
+      value: PLI05 is een drukmeter
       objectReference: {fileID: 0}
     - target: {fileID: 2507342099525016287, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
       propertyPath: m_Name
