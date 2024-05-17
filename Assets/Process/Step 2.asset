@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8a21b977c29ed46b1b6c9a0e663e70, type: 3}
+  m_Name: Step 2
+  m_EditorClassIdentifier: 
+  attachedObjective: Selecteer de gasmeter FQi101 aan in de gastoevoer
+  attachedSprite: {fileID: 0}
+  identifier: FQ101
+  feedbackText: Goedzo, dit is inderdaad de gasmeter
+  hasMicrogame: 0
+  flowGame: 0
+  ballGame: 0
