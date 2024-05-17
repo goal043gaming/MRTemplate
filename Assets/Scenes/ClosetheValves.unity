@@ -20381,7 +20381,7 @@ Transform:
   m_GameObject: {fileID: 2074799300}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -2.1, y: 1.34, z: 0.35}
+  m_LocalPosition: {x: -1.74, y: 1.34, z: 0.77}
   m_LocalScale: {x: 0.5, y: 0.0381, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20871,6 +20871,7 @@ MonoBehaviour:
   - {fileID: 2074799300}
   rayInteractor: {fileID: 1109407790274764225}
   anchorManager: {fileID: 1109407790274764223}
+  exclusionCollider: {fileID: 0}
   prefabAmount: 4
   questionManager: {fileID: 0}
 --- !u!114 &1109407790274764228

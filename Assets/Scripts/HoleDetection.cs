@@ -38,7 +38,7 @@ public class HoleDetection : MonoBehaviour
                 answerManager.Answer();
             }
         }
-        else
+        if(collision.transform.tag == "Throwable" && !answerManager.isCorrect)
         {
             text.gameObject.SetActive(true);
             StartCoroutine(TextTimer(1));
