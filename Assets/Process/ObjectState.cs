@@ -16,11 +16,11 @@ public class ObjectState : MonoBehaviour
     {
         if(isCorrect)
         {
-            process.NextStep();
             correctText.text = "Correct!";
             isCorrect = false;
             FeedbackWindow.SetActive(true);
             StartCoroutine(DisableWindow());
+            process.NextStep();
         }
         if(isCorrect && isLast)
         {

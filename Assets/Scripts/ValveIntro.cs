@@ -38,7 +38,7 @@ public class ValveIntro : MonoBehaviour
         {
             rb.isKinematic = false;
             //rb.AddForce(transform.up * forceValue);
-            rb.AddForce(0, forceValue, 0, ForceMode.Impulse);
+            rb.AddForce(0, forceValue, 2, ForceMode.Impulse);
             isLaunched = true;
             interactable.enabled = true;
         }
