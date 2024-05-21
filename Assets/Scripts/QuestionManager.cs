@@ -22,6 +22,8 @@ public class QuestionManager : MonoBehaviour
 
     //[SerializeField] Process process;
 
+    [SerializeField] GameObject nextScene;
+
     public void Start()
     {
         //GenerateQuestion();
@@ -31,7 +33,7 @@ public class QuestionManager : MonoBehaviour
     {
         if(currentQuestionIndex >= qAHolder.Count)
         {
-            print("No more questions available.");
+            nextScene.SetActive(true);
             return;
         }
 

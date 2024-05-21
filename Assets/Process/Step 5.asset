@@ -19,3 +19,4 @@ MonoBehaviour:
   hasMicrogame: 0
   flowGame: 0
   ballGame: 0
+  isLast: 1

@@ -24616,6 +24616,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Emmer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5781805231420333195, guid: d67f13090905f7d49b18a73290194ba5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6590676746926655025, guid: d67f13090905f7d49b18a73290194ba5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.418
