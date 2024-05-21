@@ -20028,15 +20028,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
       propertyPath: objectivesToDisplay.Array.data[0]
-      value: Close the correct Valves
+      value: Maak de juiste afsluiters dicht!
       objectReference: {fileID: 0}
     - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
       propertyPath: objectivesToDisplay.Array.data[1]
-      value: Stop the water from flooding
+      value: Stop het water!
       objectReference: {fileID: 0}
     - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
       propertyPath: objectivesToDisplay.Array.data[2]
-      value: Clean the flood
+      value: Ruim het water op.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
