@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Content.Interaction;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ValveIntro : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class ValveIntro : MonoBehaviour
 
     private float rotValue;
     private Rigidbody rb;
+    private XRGrabInteractable interactable;
+    private bool isLaunched = false;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = connectedLid.GetComponent<Rigidbody>();
+        interactable.enabled = false;
         rb.isKinematic = true;
     }
 
@@ -28,10 +32,13 @@ public class ValveIntro : MonoBehaviour
 
     private void CheckRotation()
     {
-        if(rotValue >= 1)
+        if(rotValue >= 1 && !isLaunched)
         {
             rb.isKinematic = false;
-            rb.AddForce(transform.up * forceValue);
+            //rb.AddForce(transform.up * forceValue);
+            rb.AddForce(0, forceValue, 0, ForceMode.Impulse);
+            isLaunched = true;
+            interactable.enabled = true;
         }
     }
 }

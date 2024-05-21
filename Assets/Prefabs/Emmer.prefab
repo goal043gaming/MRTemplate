@@ -401,15 +401,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482ecead8659deb4e9ac2b461d64274e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.095
+      value: -3.418
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482ecead8659deb4e9ac2b461d64274e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 149.935
+      value: 0.761
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482ecead8659deb4e9ac2b461d64274e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.105
+      value: -1.152
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 482ecead8659deb4e9ac2b461d64274e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -670,7 +670,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 482ecead8659deb4e9ac2b461d64274e, type: 3}
 --- !u!4 &6590676746926655025 stripped
