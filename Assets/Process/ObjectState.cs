@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ObjectState : MonoBehaviour
 {
-    public bool isActive,isCorrect, isFalse;
+    public bool isActive,isCorrect, isFalse, isLast;
     public string uniqueIdentifier;
     public GameObject FeedbackWindow;
     public TMP_Text correctText;
@@ -21,6 +21,15 @@ public class ObjectState : MonoBehaviour
             isCorrect = false;
             FeedbackWindow.SetActive(true);
             StartCoroutine(DisableWindow());
+        }
+        if(isCorrect && isLast)
+        {
+            correctText.text = "Correct!";
+            isCorrect = false;
+            FeedbackWindow.SetActive(true);
+            StartCoroutine(DisableWindow());
+
+            process.SceneTransition();
         }
        /* else
         {

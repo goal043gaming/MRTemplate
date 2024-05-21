@@ -1,3 +1,4 @@
+using BestHTTP.SecureProtocol.Org.BouncyCastle.Asn1.Mozilla;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,12 +16,15 @@ public class Process : MonoBehaviour
     public string flowIdentifier, ballIdentifier;
     public bool isActive;
 
+    [SerializeField] GameObject nextScene;
+
     private Image prevImage;
     private int currentStepIndex;
     private ObjectState objectstate;
     private Object currentStep;
 
     public bool debug;
+    public bool lastCheck;
 
     private void Start()
     {
@@ -69,6 +73,11 @@ public class Process : MonoBehaviour
                     }
                 }
 
+                if(currentStep.isLast)
+                {
+                    objectstate.isLast = true;
+                }
+
                 if(currentStep.identifier == currentIdentifier)
                 {
                     objectstate.isCorrect = true;
@@ -94,10 +103,19 @@ public class Process : MonoBehaviour
         {
             NextStep();
         }
+        if(lastCheck)
+        {
+            SceneTransition();
+        }
     }
 
     public void FindObjects()
     {
         linkedObjects = GameObject.FindGameObjectsWithTag("Interactable");
+    }
+
+    public void SceneTransition()
+    {
+        nextScene.SetActive(true);
     }
 }

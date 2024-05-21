@@ -17,6 +17,9 @@ public class Object : ScriptableObject
     public bool flowGame;
     public bool ballGame;
 
+    [Header(" Overall")]
+    public bool isLast;
+
     // Start is called before the first frame update
     void Start()
     {

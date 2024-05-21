@@ -31,6 +31,7 @@ public class SpawnHoles : MonoBehaviour
             if (!IsInsideCollider(hitPose.position, exclusionCollider))
             {
                 var result = anchorManager.AddAnchor(hitPose);
+
                 prefabToSpawn[index].SetActive(true);
                 prefabToSpawn[index].transform.position = hitPose.position;
                 prefabToSpawn[index].transform.rotation = hitPose.rotation;
