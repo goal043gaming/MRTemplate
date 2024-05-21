@@ -10,6 +10,7 @@ TagManager:
   - Flow
   - Flood
   - Water
+  - Interactable
   layers:
   - Default
   - TransparentFX

@@ -17,7 +17,9 @@ public class FloodCheck : MonoBehaviour
     [SerializeField] FlowStop flowStop;
 
     [SerializeField] AudioSource waterRunning;
+
     private bool isPlaying = false;
+    private bool isFinish = false;
 
     private void OnTriggerEnter(Collider other)
     {

@@ -64,6 +64,7 @@ public class PlacementHandler : MonoBehaviour
     public bool testingText;
     public bool testingProcess;
     [SerializeField] GameObject prevObject;
+    public bool testObjects;
 
     [Header("Haptic Feedback")]
     [SerializeField][Range(0,1)] float hapIntensity;
@@ -101,6 +102,14 @@ public class PlacementHandler : MonoBehaviour
         {
             ShowPreview();
         } 
+        if(testObjects)
+        {
+            Instantiate(placeObjects[3]);
+            placeObjects[3].SetActive(false);
+            process.FindObjects();
+            testObjects = false;
+            process.DisplayStep(0);
+        }
     }
 
     public void ObjectGrabbed()
@@ -139,6 +148,9 @@ public class PlacementHandler : MonoBehaviour
            placementSound.Play();
            Instantiate(spawnPrefab, hitpose.position, hitpose.rotation);
 
+           placeObjects[3].SetActive(false);
+           process.FindObjects();
+           
            UpdateNumber();
            CheckAmount();
         }
@@ -226,7 +238,10 @@ public class PlacementHandler : MonoBehaviour
         allowPlacement = true;
         TriggerHaptic(lInteractor.xrController);
 
-        objective.UpdateText(objectivesToDisplay[1]);
+        if(!process.isActive)
+        {
+            objective.UpdateText(objectivesToDisplay[1]);
+        }  
     }
 
     public void DroppedObject()
@@ -238,7 +253,11 @@ public class PlacementHandler : MonoBehaviour
         lInteractor.gameObject.SetActive(false);
         allowPlacement = false;
 
-        objective.UpdateText(objectivesToDisplay[0]);
+
+        if (!process.isActive)
+        {
+            objective.UpdateText(objectivesToDisplay[0]);
+        }
     }
 
     private void UpdateNumber()

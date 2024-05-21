@@ -13,6 +13,7 @@ public class Process : MonoBehaviour
     public GameObject[] linkedObjects;
     public TMP_Text feedbackText;
     public string flowIdentifier, ballIdentifier;
+    public bool isActive;
 
     private Image prevImage;
     private int currentStepIndex;
@@ -30,10 +31,13 @@ public class Process : MonoBehaviour
     {
         if(index < objectList.objects.Count)
         {
+            
             currentStep = objectList.objects[index];
             objectText.text = currentStep.attachedObjective;
             objectImage.sprite = currentStep.attachedSprite;
             feedbackText.text = currentStep.feedbackText;
+
+            isActive = true;
 
             for(int i = 0; i < linkedObjects.Length; i++)
             {
@@ -90,5 +94,10 @@ public class Process : MonoBehaviour
         {
             NextStep();
         }
+    }
+
+    public void FindObjects()
+    {
+        linkedObjects = GameObject.FindGameObjectsWithTag("Interactable");
     }
 }

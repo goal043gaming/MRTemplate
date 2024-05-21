@@ -19,6 +19,8 @@ public class ValveIntro : MonoBehaviour
     void Start()
     {
         rb = connectedLid.GetComponent<Rigidbody>();
+        interactable = connectedLid.GetComponent<XRGrabInteractable>();
+
         interactable.enabled = false;
         rb.isKinematic = true;
     }
