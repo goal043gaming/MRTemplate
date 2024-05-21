@@ -1419,7 +1419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
       propertyPath: objectivesToDisplay.Array.data[0]
-      value: Throw the ball at the right answer!
+      value: Gooi de bal op het juiste antwoord!
       objectReference: {fileID: 0}
     - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
       propertyPath: qAHolder.Array.data[2].correctAnswer

@@ -9788,7 +9788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1083588518
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12559,7 +12559,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1317634514
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18581,7 +18581,7 @@ MonoBehaviour:
   hoverMaterial: {fileID: 2100000, guid: 64a6a164ffff6194a80c7a984d7d9ebe, type: 2}
   selectMaterial: {fileID: 0}
   ObjectName: Miniplant
-  ObjectDescription: Miniplant, place it on a broad wall.
+  ObjectDescription: Plaats deze op een muur met veel ruimte
 --- !u!114 &1431143142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30999,7 +30999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &2003548582
 SphereCollider:
   m_ObjectHideFlags: 0
