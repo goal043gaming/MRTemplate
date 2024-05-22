@@ -4493,6 +4493,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 367056301821787370, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
+      propertyPath: builderDesc
+      value: 
+      objectReference: {fileID: 326225578}
+    - target: {fileID: 367056301821787370, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
+      propertyPath: builderName
+      value: 
+      objectReference: {fileID: 1998540647}
+    - target: {fileID: 367056301821787370, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
       propertyPath: hapDuration
       value: 1.5
       objectReference: {fileID: 0}
@@ -4548,6 +4556,10 @@ PrefabInstance:
       propertyPath: anchorManager
       value: 
       objectReference: {fileID: 1109407790274764223}
+    - target: {fileID: 367056301821787370, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
+      propertyPath: builderAmount
+      value: 
+      objectReference: {fileID: 1202684573}
     - target: {fileID: 367056301821787370, guid: e722785e9a2f06c44a126442b80ceca8, type: 3}
       propertyPath: plantsToPlace
       value: 1
@@ -12407,6 +12419,10 @@ PrefabInstance:
     - target: {fileID: 3032334164665928405, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_Name
       value: ObjectiveHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032334164665928405, guid: 66d40221d132d04499855da9ce315f20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3032334164805062083, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_Name
