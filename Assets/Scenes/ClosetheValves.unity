@@ -5131,11 +5131,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 296423352315492079, guid: d67f13090905f7d49b18a73290194ba5, type: 3}
       propertyPath: m_UseGravity
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 383987671563771484, guid: d67f13090905f7d49b18a73290194ba5, type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157833814128684256, guid: d67f13090905f7d49b18a73290194ba5, type: 3}
+      propertyPath: m_TagString
+      value: Water
       objectReference: {fileID: 0}
     - target: {fileID: 5781805231420333195, guid: d67f13090905f7d49b18a73290194ba5, type: 3}
       propertyPath: m_Name
