@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Step 2
   m_EditorClassIdentifier: 
   attachedObjective: Selecteer de gasmeter FQi101 aan in de gastoevoer
-  attachedSprite: {fileID: 0}
+  attachedSprite: {fileID: 21300000, guid: 6f4c838ff28feaa49b89abc1b579683a, type: 3}
   identifier: FQ101
   feedbackText: Goedzo, dit is inderdaad de gasmeter
   hasMicrogame: 0
   flowGame: 0
   ballGame: 0
+  isLast: 0

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Step 1
   m_EditorClassIdentifier: 
   attachedObjective: Selecteer de verwarmingsketel
-  attachedSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  attachedSprite: {fileID: 21300000, guid: 3f5e0d0f88355974da3b14a416b78b39, type: 3}
   identifier: KET
   feedbackText: Goed, je hebt de verwarmingsketel gevonden!
   hasMicrogame: 0
   flowGame: 0
   ballGame: 0
+  isLast: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Step 5
   m_EditorClassIdentifier: 
   attachedObjective: Zoek nu handafsluiter 4 in de gastoevoer
-  attachedSprite: {fileID: 0}
+  attachedSprite: {fileID: 21300000, guid: c07f78d4820bd6445a1da28b62a4305a, type: 3}
   identifier: HAN4
   feedbackText: Correct, dit is handafsluiter 4
   hasMicrogame: 0
