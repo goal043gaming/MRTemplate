@@ -350,5 +350,5 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -3049035057248204473, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  speed: 5
+    m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  speed: 6.5

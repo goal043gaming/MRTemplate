@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using TMPro;
 
 public class SpawnHoles : MonoBehaviour
 {
@@ -12,16 +13,23 @@ public class SpawnHoles : MonoBehaviour
     [SerializeField] ARAnchorManager anchorManager;
     [SerializeField] Collider exclusionCollider; 
     [SerializeField] int prefabAmount = 4;
+
     private int amountUsed = 0;
     private int index = 0;
+    private ObjectHandler objHandler;
     [SerializeField] QuestionManager questionManager;
+
+    [Header("UI")]
+    [SerializeField] TMP_Text uiNumber;
+    [SerializeField] TMP_Text uiAss;
+    [SerializeField] GameObject UI;
 
     private RotateOnEnable rotate;
 
     void Start()
     {
         rayInteractor.selectEntered.AddListener(SpawnPrefab);
-        rotate = prefabToSpawn[6].GetComponent<RotateOnEnable>();
+        //rotate = prefabToSpawn[6].GetComponent<RotateOnEnable>();
     }
 
     void SpawnPrefab(BaseInteractionEventArgs args)
@@ -35,16 +43,12 @@ public class SpawnHoles : MonoBehaviour
             {
                 var result = anchorManager.AddAnchor(hitPose);
 
+                UpdateUI();
                 prefabToSpawn[index].SetActive(true);
                 prefabToSpawn[index].transform.position = hitPose.position;
                 prefabToSpawn[index].transform.rotation = hitPose.rotation;
                 index++;
                 amountUsed++;
-
-                if (index == 6)
-                {
-                    rotate.RotateObject();
-                }
             }
             else
             {
@@ -62,6 +66,7 @@ public class SpawnHoles : MonoBehaviour
             else
             {
                 questionManager.GenerateQuestion();
+                UI.SetActive(false);
             }
         }
     }
@@ -69,5 +74,12 @@ public class SpawnHoles : MonoBehaviour
     bool IsInsideCollider(Vector3 point, Collider collider)
     {
         return collider.bounds.Contains(point);
+    }
+
+    private void UpdateUI()
+    {
+        objHandler = prefabToSpawn[index].GetComponent<ObjectHandler>();
+        uiAss.text = objHandler.ObjectDescription;
+        uiNumber.text = "Objecten om te plaatsen:" + index;
     }
 }

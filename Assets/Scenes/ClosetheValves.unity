@@ -23664,6 +23664,9 @@ MonoBehaviour:
   exclusionCollider: {fileID: 0}
   prefabAmount: 4
   questionManager: {fileID: 0}
+  uiNumber: {fileID: 0}
+  uiAss: {fileID: 0}
+  UI: {fileID: 0}
 --- !u!114 &1109407790274764228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23819,7 +23822,7 @@ PrefabInstance:
       objectReference: {fileID: 739595050}
     - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
       propertyPath: speed
-      value: 0.3
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 6758415558402782554, guid: 1d76d2964fe808544897049c16f10855, type: 3}
       propertyPath: xOffset

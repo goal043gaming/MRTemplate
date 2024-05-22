@@ -837,8 +837,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.4714527, y: 0.6520386, z: 1.2226963}
-  m_Center: {x: -0.106750965, y: 0.16268921, z: -0.11134815}
+  m_Size: {x: 0.58630705, y: 0.6520386, z: 1.2622433}
+  m_Center: {x: -0.11353135, y: 0.16268921, z: -0.13112164}
 --- !u!1001 &57389077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3602,8 +3602,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5915427, y: 0.7213135, z: 1.1708851}
-  m_Center: {x: 0.011521101, y: 0.26409912, z: -0.08544254}
+  m_Size: {x: 0.67924786, y: 0.7213135, z: 1.1708851}
+  m_Center: {x: 0.039167404, y: 0.26409912, z: -0.08544254}
 --- !u!1001 &357356506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5696,6 +5696,7 @@ MonoBehaviour:
   canDestroy: 0
   hasFlooded: 0
   audio: {fileID: 0}
+  sceneTransition: {fileID: 0}
   debug: 0
   isDebug: 0
 --- !u!65 &531598013
@@ -8573,6 +8574,7 @@ MonoBehaviour:
   amountToSubtract: 16.63
   waterVisual: {fileID: 1572453446}
   grabWaterAudio: {fileID: 854671586}
+  uiHelp: {fileID: 0}
 --- !u!65 &854671589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22690,6 +22692,7 @@ MonoBehaviour:
   amountToSubtract: 16.63
   waterVisual: {fileID: 343648451}
   grabWaterAudio: {fileID: 1665162749}
+  uiHelp: {fileID: 0}
 --- !u!65 &1665162752
 BoxCollider:
   m_ObjectHideFlags: 0
