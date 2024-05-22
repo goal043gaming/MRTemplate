@@ -22,15 +22,6 @@ public class ObjectState : MonoBehaviour
             StartCoroutine(DisableWindow());
             
         }
-        if(isCorrect && isLast)
-        {
-            correctText.text = "Correct!";
-            isCorrect = false;
-            FeedbackWindow.SetActive(true);
-            StartCoroutine(DisableWindow());
-
-            process.SceneTransition();
-        }
        /* else
         {
             process.NextStep();

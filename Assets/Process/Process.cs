@@ -73,11 +73,6 @@ public class Process : MonoBehaviour
                     }
                 }
 
-                if(currentStep.isLast)
-                {
-                    objectstate.isLast = true;
-                }
-
                 if(currentStep.identifier == currentIdentifier)
                 {
                     objectstate.isCorrect = true;
@@ -87,6 +82,7 @@ public class Process : MonoBehaviour
         }
         else
         {
+            nextScene.SetActive(true);
             print("End of the process");
         }
     }
