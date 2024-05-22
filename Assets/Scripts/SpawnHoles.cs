@@ -16,9 +16,12 @@ public class SpawnHoles : MonoBehaviour
     private int index = 0;
     [SerializeField] QuestionManager questionManager;
 
+    private RotateOnEnable rotate;
+
     void Start()
     {
         rayInteractor.selectEntered.AddListener(SpawnPrefab);
+        rotate = prefabToSpawn[6].GetComponent<RotateOnEnable>();
     }
 
     void SpawnPrefab(BaseInteractionEventArgs args)
@@ -37,6 +40,11 @@ public class SpawnHoles : MonoBehaviour
                 prefabToSpawn[index].transform.rotation = hitPose.rotation;
                 index++;
                 amountUsed++;
+
+                if (index == 6)
+                {
+                    rotate.RotateObject();
+                }
             }
             else
             {

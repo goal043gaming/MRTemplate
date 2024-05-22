@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateOnEnable : MonoBehaviour
 {
-    private void OnEnable()
+    public void RotateObject()
     {
         transform.Rotate(90, 0, 0);
     }

@@ -16,7 +16,6 @@ public class ObjectState : MonoBehaviour
     {
         if(isCorrect)
         {
-            process.NextStep();
             correctText.text = "Correct!";
             isCorrect = false;
             FeedbackWindow.SetActive(true);
@@ -45,5 +44,6 @@ public class ObjectState : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         FeedbackWindow.SetActive(false);
+        process.NextStep();
     }
 }
