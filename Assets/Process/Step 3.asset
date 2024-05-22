@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Step 3
   m_EditorClassIdentifier: 
   attachedObjective: Selecteer de gasklep XEV101 in de gastoevoer
-  attachedSprite: {fileID: 0}
+  attachedSprite: {fileID: 21300000, guid: a93a41748c979084193e42f884577728, type: 3}
   identifier: XEV101
   feedbackText: Dit is inderdaad de gasklep XEV101. Deze wordt bediend door de vrijgaveschakelaar
     op de schakelkast
   hasMicrogame: 0
   flowGame: 0
   ballGame: 0
+  isLast: 0

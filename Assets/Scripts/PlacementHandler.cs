@@ -24,9 +24,11 @@ public class PlacementHandler : MonoBehaviour
     private int selectedObjectNumber;
     private int totalAmount;
 
+    [Header("UI")]
     [SerializeField] TMP_Text objAmount;
     [SerializeField] TMP_Text objName;
     [SerializeField] TMP_Text objDesc;
+    [SerializeField] GameObject builderAmount, builderName, builderDesc;
 
     [SerializeField] int spheresToPlace;
     [SerializeField] int cubesToPlace;
@@ -348,8 +350,11 @@ public class PlacementHandler : MonoBehaviour
     {
         if(totalAmount == 0)
         {
-            print("TESTING");
             process.DisplayStep(0);
+
+            builderAmount.SetActive(false);
+            builderDesc.SetActive(false);
+            builderName.SetActive(false);
         }
     }
 }
