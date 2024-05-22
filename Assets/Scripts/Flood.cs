@@ -19,6 +19,7 @@ public class Flood : MonoBehaviour
     [HideInInspector] public bool hasFlooded = false;
 
     [SerializeField] AudioSource audio;
+    [SerializeField] GameObject sceneTransition;
 
     [Header("Debug")]
     public bool debug = false;
@@ -35,6 +36,7 @@ public class Flood : MonoBehaviour
         }
         if(transform.position.y <= bottomHeight && canDestroy)
         {
+            sceneTransition.SetActive(true);
             Destroy(gameObject);
         }
 

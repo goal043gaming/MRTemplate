@@ -10,6 +10,7 @@ public class Bucket : MonoBehaviour
     [SerializeField] GameObject waterVisual;
 
     [SerializeField] AudioSource grabWaterAudio;
+    [SerializeField] GameObject uiHelp;
 
     private Flood flood;
 

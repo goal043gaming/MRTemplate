@@ -7134,6 +7134,10 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 960739951}
+    - target: {fileID: 5062540105304350744, guid: a9ffa9f8189e9bb45805ca57598d7669, type: 3}
+      propertyPath: input.m_Reference
+      value: 
+      objectReference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 7650098398599213038, guid: a9ffa9f8189e9bb45805ca57598d7669, type: 3}
       propertyPath: m_Name
       value: Sphere
@@ -8438,7 +8442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1795190245834000743, guid: 3a43f1c77112869418d7dd6a6797d9bd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3951470520929247893, guid: 3a43f1c77112869418d7dd6a6797d9bd, type: 3}
       propertyPath: m_LocalPosition.x
