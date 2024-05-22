@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31453457, g: 0.55162674, b: 0.82192343, a: 1}
+  m_IndirectSpecularColor: {r: 0.31461963, g: 0.5517244, b: 0.8219393, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6633,6 +6633,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cab7e8f6b0f7e43af0d66adadb8567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1941101220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941101218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c29b52e003d4a44fb896385d8c66c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2001866392 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4941219564456579801, guid: dc067c577ec1b854684d789b6e727cc0, type: 3}
@@ -7540,19 +7552,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185679614569388711, guid: 9c8cefba6c839e94ca05b7774ace855e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071066
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8185679614569388711, guid: 9c8cefba6c839e94ca05b7774ace855e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.707107
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8185679614569388711, guid: 9c8cefba6c839e94ca05b7774ace855e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8185679614569388711, guid: 9c8cefba6c839e94ca05b7774ace855e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8185679614569388711, guid: 9c8cefba6c839e94ca05b7774ace855e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7569,7 +7581,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8020145449425311584, guid: 9c8cefba6c839e94ca05b7774ace855e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1941101220}
   m_SourcePrefab: {fileID: 100100000, guid: 9c8cefba6c839e94ca05b7774ace855e, type: 3}
 --- !u!222 &3355178504154724485
 CanvasRenderer:

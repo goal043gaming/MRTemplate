@@ -837,8 +837,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.4714527, y: 0.6520386, z: 0.72452354}
-  m_Center: {x: -0.106750965, y: 0.16268921, z: 0.13773823}
+  m_Size: {x: 0.4714527, y: 0.6520386, z: 1.2226963}
+  m_Center: {x: -0.106750965, y: 0.16268921, z: -0.11134815}
 --- !u!1001 &57389077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1390,15 +1390,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4024954778274513737, guid: efe288545b74b2f4b8d6a9aa79c0a6ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.788
+      value: 0.089546114
       objectReference: {fileID: 0}
     - target: {fileID: 4024954778274513737, guid: efe288545b74b2f4b8d6a9aa79c0a6ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.729
+      value: 1.0750251
       objectReference: {fileID: 0}
     - target: {fileID: 4024954778274513737, guid: efe288545b74b2f4b8d6a9aa79c0a6ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.81
+      value: 0.47949696
       objectReference: {fileID: 0}
     - target: {fileID: 4024954778274513737, guid: efe288545b74b2f4b8d6a9aa79c0a6ec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11808,15 +11808,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1563910393336547116, guid: 1ed29f46423738a4bbd970e965374e33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.8425462
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: 1563910393336547116, guid: 1ed29f46423738a4bbd970e965374e33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.537
+      value: 0.8830251
       objectReference: {fileID: 0}
     - target: {fileID: 1563910393336547116, guid: 1ed29f46423738a4bbd970e965374e33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5834969
+      value: 0.706
       objectReference: {fileID: 0}
     - target: {fileID: 1563910393336547116, guid: 1ed29f46423738a4bbd970e965374e33, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22214,7 +22214,7 @@ Transform:
   m_GameObject: {fileID: 1642657158}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.13052596, z: -0, w: 0.99144495}
-  m_LocalPosition: {x: -2.883, y: -1.9990251, z: 1.033}
+  m_LocalPosition: {x: -0.005453661, y: -1.653, z: 3.322497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
