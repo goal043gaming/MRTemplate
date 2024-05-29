@@ -2485,18 +2485,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MR Interaction Setup
       objectReference: {fileID: 0}
-    - target: {fileID: 3655493459598823796, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
-      propertyPath: objectToPlace
-      value: 
-      objectReference: {fileID: 3377362064105211173, guid: da258dfca7f103541b13797d0f19522c, type: 3}
-    - target: {fileID: 3655493459598823796, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
-      propertyPath: planeClassification.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3655493459598823796, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
-      propertyPath: planeClassification.Array.data[4]
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 6880324381277293900, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

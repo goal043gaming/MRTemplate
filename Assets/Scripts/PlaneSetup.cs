@@ -9,6 +9,9 @@ public class PlaneSetup : MonoBehaviour
     public ARPlaneManager planeManager;
     public PlaneClassification[] planeClassification;
 
+    [SerializeField] GameObject objectToPlace;
+    private List<ARPlane> windowPlanes = new List<ARPlane>();
+
     //0 = Wall
     //1 = Floor
     //2 = Ceiling
@@ -56,7 +59,20 @@ public class PlaneSetup : MonoBehaviour
                 Renderer itemRenderer = item.GetComponent<Renderer>();
                 itemRenderer.material = planeMaterial[3];
             }
+            if(item.classification == planeClassification[4])
+            {
+                windowPlanes.Add(item);
+                PlaceObject(item);
+            }
         }
+    }
+
+    private void PlaceObject(ARPlane plane)
+    {
+        Vector3 planeCenter = plane.center;
+        Quaternion planeRotation = plane.transform.rotation;
+
+        Instantiate(objectToPlace, planeCenter, planeRotation);
     }
 
 }
