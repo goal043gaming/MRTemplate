@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31461963, g: 0.5517244, b: 0.8219393, a: 1}
+  m_IndirectSpecularColor: {r: 0.31453457, g: 0.55162674, b: 0.82192343, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -471,6 +471,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 8
   sceneCamera: {fileID: 301288989}
+  mainCamera: {fileID: 1109407790274764220}
 --- !u!1001 &357356506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1183,7 +1184,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -2424,7 +2425,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -2738,10 +2739,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MR Interaction Setup
       objectReference: {fileID: 0}
+    - target: {fileID: 2939367299907652003, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3655493459598823796, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       propertyPath: objectToPlace
       value: 
-      objectReference: {fileID: 5771354589415660613, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
+      objectReference: {fileID: 3377362064105211173, guid: da258dfca7f103541b13797d0f19522c, type: 3}
     - target: {fileID: 3655493459598823796, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       propertyPath: planeClassification.Array.size
       value: 5
@@ -2749,6 +2754,10 @@ PrefabInstance:
     - target: {fileID: 3655493459598823796, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       propertyPath: planeClassification.Array.data[4]
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5171264846807754442, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6880324381277293900, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2838,17 +2847,29 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1449172695068003018, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924122608826993096, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3868144165012749998, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4550689945884481821, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.002
       objectReference: {fileID: 0}
     - target: {fileID: 4550689945884481821, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.968
+      value: 1.318
       objectReference: {fileID: 0}
     - target: {fileID: 4550689945884481821, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.736
+      value: 1.673
       objectReference: {fileID: 0}
     - target: {fileID: 4550689945884481821, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2881,6 +2902,10 @@ PrefabInstance:
     - target: {fileID: 5771354589415660613, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
       propertyPath: m_Name
       value: Window
+      objectReference: {fileID: 0}
+    - target: {fileID: 7072337273524623685, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7302107228341140651, guid: 4ca655c3a706e2f49aebae288e02602b, type: 3}
       propertyPath: m_ClearFlags

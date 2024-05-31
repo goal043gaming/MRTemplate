@@ -39,7 +39,7 @@ public class PlaneSetup : MonoBehaviour
 
         foreach (var item in newPlanes)
         {
-            if(item.classification == planeClassification[0])
+            /*if(item.classification == planeClassification[0])
             {
                 Renderer itemRenderer = item.GetComponent<Renderer>();
                 itemRenderer.material = planeMaterial[0];
@@ -58,7 +58,7 @@ public class PlaneSetup : MonoBehaviour
             {
                 Renderer itemRenderer = item.GetComponent<Renderer>();
                 itemRenderer.material = planeMaterial[3];
-            }
+            } */
             if(item.classification == planeClassification[4])
             {
                 windowPlanes.Add(item);
