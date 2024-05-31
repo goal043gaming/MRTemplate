@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.31461963, g: 0.5517244, b: 0.8219393, a: 1}
+  m_IndirectSpecularColor: {r: 0.31453457, g: 0.55162674, b: 0.82192343, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8048,6 +8048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c29b52e003d4a44fb896385d8c66c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugRot: 0
 --- !u!114 &1941101225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8893,6 +8894,7 @@ MonoBehaviour:
   uiNumber: {fileID: 1221560271}
   uiAss: {fileID: 591178771}
   UI: {fileID: 1382528628}
+  rotate: {fileID: 1941101220}
 --- !u!224 &1261073044793567346
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9078,11 +9080,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185679614569388711, guid: 9c8cefba6c839e94ca05b7774ace855e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8185679614569388711, guid: 9c8cefba6c839e94ca05b7774ace855e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8185679614569388711, guid: 9c8cefba6c839e94ca05b7774ace855e, type: 3}
       propertyPath: m_LocalRotation.y

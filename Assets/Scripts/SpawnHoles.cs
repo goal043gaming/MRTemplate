@@ -24,12 +24,11 @@ public class SpawnHoles : MonoBehaviour
     [SerializeField] TMP_Text uiAss;
     [SerializeField] GameObject UI;
 
-    private RotateOnEnable rotate;
+    [SerializeField] RotateOnEnable rotate;
 
     void Start()
     {
         rayInteractor.selectEntered.AddListener(SpawnPrefab);
-        //rotate = prefabToSpawn[6].GetComponent<RotateOnEnable>();
     }
 
     void SpawnPrefab(BaseInteractionEventArgs args)
@@ -49,6 +48,8 @@ public class SpawnHoles : MonoBehaviour
                 prefabToSpawn[index].transform.rotation = hitPose.rotation;
                 index++;
                 amountUsed++;
+
+                rotate.RotateObject();
             }
             else
             {
