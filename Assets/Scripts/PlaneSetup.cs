@@ -17,6 +17,7 @@ public class PlaneSetup : MonoBehaviour
     //2 = Ceiling
     //3 = Table
 
+    public bool placePrefab;
     public Material[] planeMaterial;
 
     // Start is called before the first frame update
@@ -69,14 +70,17 @@ public class PlaneSetup : MonoBehaviour
 
     private void PlaceObject(ARPlane plane)
     {
-        Vector3 planeCenter = plane.center;
-        Quaternion planeRotation = plane.transform.rotation;
+        if(placePrefab)
+        {
+            Vector3 planeCenter = plane.center;
+            Quaternion planeRotation = plane.transform.rotation;
 
-        objectToPlace.SetActive(true);
-        objectToPlace.transform.position = planeCenter;
-        objectToPlace.transform.rotation = planeRotation;
+            objectToPlace.SetActive(true);
+            objectToPlace.transform.position = planeCenter;
+            objectToPlace.transform.rotation = planeRotation;
 
-        //Instantiate(objectToPlace, planeCenter, planeRotation);
+            //Instantiate(objectToPlace, planeCenter, planeRotation);
+        }
     }
 
 }
