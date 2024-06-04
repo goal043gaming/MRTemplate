@@ -47,10 +47,10 @@ public class ValveIntro : MonoBehaviour
     //Function is called in the update function, if the valve has been rotated into the right direction is launches the connectlid and enables interactivity functionality on it
     private void CheckRotation()
     {
+        //The value is inherited from the XR Knob script, 1 means it's at its limit of rotation, similar to 0, tweak to the required rotation direction
         if(rotValue >= 1 && !isLaunched)
         {
             rb.isKinematic = false;
-            //rb.AddForce(transform.up * forceValue);
             rb.AddForce(0, forceValue, 2, ForceMode.Impulse);
             isLaunched = true;
             interactable.enabled = true;

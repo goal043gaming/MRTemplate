@@ -82,16 +82,9 @@ public class PlaneSetup : MonoBehaviour
             Vector3 planeCenter = plane.center;
             Quaternion planeRotation = plane.transform.rotation;
 
-            Debug.Log(plane.center);
-            Debug.Log(plane.transform.rotation);
-
             objectToPlace.SetActive(true);
             objectToPlace.transform.position = planeCenter;
             objectToPlace.transform.rotation = planeRotation;
-
-            Debug.Log(objectToPlace.transform.position);
-            Debug.Log(objectToPlace.transform.rotation);
         }
     }
-
 }

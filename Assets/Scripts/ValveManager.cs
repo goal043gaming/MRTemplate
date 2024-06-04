@@ -28,6 +28,7 @@ public class ValveManager : MonoBehaviour
     //Function that gets called by the update function, checks the rotationvalue to determine if the valve is open or closed and changes the UI based on its state
     private void SetState()
     {
+        //Rotation value is based on the XR Knob script, 1 is the limit when rotating to the right and 0 when rotating to the left, should be changed based on the requirement for rotation direction
         if(rotationValue <= 0.9)
         {
             connectedCheckpoint.valveOpen = false;

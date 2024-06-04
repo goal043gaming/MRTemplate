@@ -84,6 +84,7 @@ public class QuestionManager : MonoBehaviour
     //IEnumerator called by the correct function, waits for a seconds, changes the index for the current question and calls the GenerateQuestion function
     public IEnumerator Correcto()
     {
+        //The selected number for the delay was 1 since it allowed the VFX explosion to go off and then proceed, no longer was needed
         yield return new WaitForSeconds(1);
         currentQuestionIndex++;
         GenerateQuestion();

@@ -38,6 +38,7 @@ public class ObjectState : MonoBehaviour
     //IEnumerator used to disable the feedback window after a short delay and progress the process to the next step
     private IEnumerator DisableWindow()
     {
+        //The number 3 was a generic number for the prototype, it provided a good balance between being able to read and not slowing it down too much
         yield return new WaitForSeconds(3);
         FeedbackWindow.SetActive(false);
         process.NextStep();

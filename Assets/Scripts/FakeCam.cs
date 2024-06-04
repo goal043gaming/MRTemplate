@@ -28,7 +28,7 @@ public class FakeCam : MonoBehaviour
         //Calculate the position where the camera should be, done by moving units away from the door in the direction of the main camera
         Vector3 sceneCameraPosition = DoorTransform.position + directionToCamera.normalized * distance;
 
-        //Prevents the y-coordinate of the camera exceeding 2 units, should be made into a variable
+        //Prevents the y-coordinate of the camera exceeding 2 units, 2 was a generic number and should be tweaked to the requirement
         sceneCameraPosition.y = sceneCameraPosition.y > 2f ? 2f : sceneCameraPosition.y;
 
         //Set the camera of the object on the calculated position
