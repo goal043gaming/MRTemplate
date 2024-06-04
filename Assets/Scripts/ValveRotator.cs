@@ -4,6 +4,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace UnityEngine.XR.Content.Interaction
 {
+    //This script is from the XR content samples and has not been commented by me, this script is called by the XR Knob link
+
     /// <summary>
     /// An interactable knob that follows the rotation of the interactor
     /// </summary>

@@ -8,28 +8,44 @@ using TMPro;
 
 public class PlacementHandler : MonoBehaviour
 {
-
+    //List of Gameobjects that is used in order to check what object is currently being grabbed
     [SerializeField] List<GameObject> objectsToPlace;
+
+    //Array of Gameobjects that need to be placed, are tied to the grabbed objects
     [SerializeField] GameObject[] placeObjects;
     
+    //Gameobject that is currently grabbed by the player, gets changed in objectgrabbed function
     private GameObject currentObject;
+
+    //Gameobject that is tied to the placeobjects, gets changed based on the current held object
     private GameObject spawnPrefab;
 
+    //Int for the amount of items that need to be placed
     private int amountToPlace;
 
+    //Linked Scripts to check what object is currently grabbed and information about the object that is held, like name and general information
     private GrabDetection grabDetection;
     private ObjectHandler objectHandler;
 
+    //Bool to prevent the player from placing down objects when they should'nt, changes on grabbing and dropping
     private bool allowPlacement = false;
+
+    //Int to identify the currently grabbed object
     private int selectedObjectNumber;
+
+    //Int to identify what the total amount is before the process needs to start
     private int totalAmount;
 
     [Header("UI")]
+    //Text field used to display information about the current object, taken from objecthandler
     [SerializeField] TMP_Text objAmount;
     [SerializeField] TMP_Text objName;
     [SerializeField] TMP_Text objDesc;
+
+    //UI Gameobjects that get disabled once the builder tool is completed, after totalamount reaches 0
     [SerializeField] GameObject builderAmount, builderName, builderDesc;
 
+    //Ints to determine the amount of objects that need to be placed for the specific items in objectstoplace
     [SerializeField] int spheresToPlace;
     [SerializeField] int cubesToPlace;
     [SerializeField] int cylindersToPlace;
@@ -39,6 +55,7 @@ public class PlacementHandler : MonoBehaviour
     [SerializeField] int targetCToPlace;
     [SerializeField] int targetDToPlace;
 
+    //Strings to tie the grabbed objects to the placeobjects
     [SerializeField] string objectName1;
     [SerializeField] string objectName2;
     [SerializeField] string objectName3;
@@ -48,20 +65,28 @@ public class PlacementHandler : MonoBehaviour
     [SerializeField] string objectName7;
     [SerializeField] string objectName8;
 
+    //Ray Interactors in order to enable the ray or allow them to place and give haptic feedback
     [SerializeField] XRRayInteractor lInteractor;
     [SerializeField] XRRayInteractor rInteractor;
 
+    //AnchorManager script used in order to place ARAnchor where the objects need to be instantiated
     [SerializeField] ARAnchorManager anchorManager;
 
+    //Process script that is linked in order to start the process once the builder has been completed
     [SerializeField] Process process;
 
     [Header("Sounds")]
+    //Sound that plays once an object is placed
     [SerializeField] AudioSource placementSound;
 
     [Header("Objectives")]
+    //ObjectiveHandler script that is used in order to update the current objective based on whether an object has been grabbed or placed
     [SerializeField] ObjectiveHandler objective;
+
+    //Array of strings to use as objectives
     [SerializeField] string[] objectivesToDisplay;
 
+    //Debug settings used in order to test functionalities without the VR headset
     [Header("Debug Settings")]
     public bool testingText;
     public bool testingProcess;
@@ -69,10 +94,11 @@ public class PlacementHandler : MonoBehaviour
     public bool testObjects;
 
     [Header("Haptic Feedback")]
+    //Floats used in order to give haptic feedback through the controllers
     [SerializeField][Range(0,1)] float hapIntensity;
     [SerializeField] float hapDuration;
 
-    // Start is called before the first frame update
+    //Gets all of the attached scripts in the linked objects, starts eventlistener, updates the current objective and determines what the totalamount is
     void Start()
     {
         for(int i = 0; i < objectsToPlace.Count; i++)
@@ -87,7 +113,6 @@ public class PlacementHandler : MonoBehaviour
         totalAmount = plantsToPlace;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(testingText)
@@ -100,10 +125,12 @@ public class PlacementHandler : MonoBehaviour
             CheckAmount();
         }
 
+        //If the player can place objects call the showpreview function in order to display what they are currently placing
         if(allowPlacement)
         {
             ShowPreview();
         } 
+
         if(testObjects)
         {
             Instantiate(placeObjects[3]);
@@ -114,6 +141,9 @@ public class PlacementHandler : MonoBehaviour
         }
     }
 
+    //Function that is called by the XR Grab Interactable event in order to determine what object is currently grabbed
+    //Checks all of the objectstoplace and gets the grabdetection script in order to check what object is grabbed by the player
+    //Once the object has been found it calls the functions checkobject, enableplacement and update the UI
     public void ObjectGrabbed()
     {
         for (int i = 0; i < objectsToPlace.Count; i++)
@@ -138,6 +168,10 @@ public class PlacementHandler : MonoBehaviour
 
     }
 
+    //Function that spawns the objects once allowplacement is true
+    //It gets a raycast from the left ray interactor and creates a Pose where the player is aiming and selecting
+    //Plays a sound and spawns the current prefab based on the selected object and calls the functions updatenumber and checkamount
+    //process findObjects is called for prototype functionality in order to link the process to the instantiated miniplant
     private void Spawn(BaseInteractionEventArgs args)
     {
         if(allowPlacement)
@@ -158,6 +192,7 @@ public class PlacementHandler : MonoBehaviour
         }
     }
 
+    //Function that checks the currently selected item to see with what name it aligns, based on this is changes the amount to place, what to place, the number identifier and the textfield
     private void CheckObject()
     {
         if(currentObject.name == objectName1)
@@ -234,6 +269,7 @@ public class PlacementHandler : MonoBehaviour
         }
     }
 
+    //Function that gets called on grabbing an object, enables the ray interactor, updates haptic feedback on the controller and updates the objectives, also enables allowplacement so players can spawn objects
     private void EnablePlacement()
     {
         lInteractor.gameObject.SetActive(true);
@@ -246,6 +282,8 @@ public class PlacementHandler : MonoBehaviour
         }  
     }
 
+    //Function that gets called by XR Grab Interactable event once on select exited has ben triggered
+    //Displays in UI that no object has been selected, disables the ray interactor and disallows placement
     public void DroppedObject()
     {
         objAmount.text = "No Object selected";
@@ -262,6 +300,7 @@ public class PlacementHandler : MonoBehaviour
         }
     }
 
+    //Function that uses the current number from checkobjects in order to determine the number of items left to place and the total amount, also updated the UI
     private void UpdateNumber()
     {
         if(selectedObjectNumber == 0)
@@ -309,6 +348,9 @@ public class PlacementHandler : MonoBehaviour
         objAmount.text = "Objects to place: " + amountToPlace;
     }
 
+    //Function that is called if the linked spawnprefab is not null and the allowplacement is true, gets called in the update function
+    //Rather than instantiating this function changes the spawnprefab position and rotation to follow the ray interactor of the player
+    //Once the player has no objects left to place, allowplacement gets disabled, UI gets updated and the spawnprefab is disabled
     private void ShowPreview()
     {
         if (spawnPrefab != null && allowPlacement)
@@ -331,6 +373,8 @@ public class PlacementHandler : MonoBehaviour
        
     }
 
+    //Function that gets called by Objectgrabbed
+    //Function gets information from the ObjectHandler script and updates the UI based on the information collected
     private void UpdateUI()
     {
         objectHandler = currentObject.GetComponent<ObjectHandler>();
@@ -338,6 +382,8 @@ public class PlacementHandler : MonoBehaviour
         objDesc.text = objectHandler.ObjectDescription;
     }
 
+    //Function that gets called on enable placement, uses the linked controller and sends a pulse to it
+    //The pulse is based on the declared floats hapIntensity and HapDuration
     public void TriggerHaptic(XRBaseController controller)
     {
         if(hapIntensity > 0)
@@ -346,6 +392,7 @@ public class PlacementHandler : MonoBehaviour
         }
     }
 
+    //Function that gets called by the spawn script, once totalamount is 0 the linked UI objects get disabled and the process gets started
     private void CheckAmount()
     {
         if(totalAmount == 0)
