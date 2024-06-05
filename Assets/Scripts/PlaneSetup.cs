@@ -25,6 +25,7 @@ public class PlaneSetup : MonoBehaviour
     //Array of materials to assign to the different planes identified
     public Material[] planeMaterial;
 
+    //Int used to select an object from the array in the PlaceObject function
     private int index;
 
     //Function that gets called on enable, calls the setupplanes function
@@ -82,7 +83,7 @@ public class PlaneSetup : MonoBehaviour
     }
 
     //Function that gets called once a window has been found in the setupplanes function, if placeprefab bool is true
-    //Finds the center of the linked plane and gets the rotation of the object, then changes the position and rotation of the linked gameobject to the gathered info
+    //Finds the center of the linked plane and gets the rotation of the object, then instantiates a random gameobject at that point
     private void PlaceObject(ARPlane plane)
     {
         if(placePrefab)
