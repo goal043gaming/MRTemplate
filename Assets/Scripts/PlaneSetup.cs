@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -13,16 +14,18 @@ public class PlaneSetup : MonoBehaviour
     public PlaneClassification[] planeClassification;
 
     //Gameobject that gets placed on OnEnable  if the plane is " Window" 
-    [SerializeField] GameObject objectToPlace;
+    [SerializeField] GameObject[] objectToPlace;
 
     //List of Planes for the windows that gets created on SetupPlanes in order to identify all windows in the scene
-    private List<ARPlane> windowPlanes = new List<ARPlane>();
+    private List<ARPlane> Planes = new List<ARPlane>();
 
     //Bool that decides if the object needs to be placed on a window, gets changed in the inspector for specific scenes
     public bool placePrefab;
 
     //Array of materials to assign to the different planes identified
     public Material[] planeMaterial;
+
+    private int index;
 
     //Function that gets called on enable, calls the setupplanes function
     private void OnEnable()
@@ -67,7 +70,12 @@ public class PlaneSetup : MonoBehaviour
             } 
             if(item.classification == planeClassification[4])
             {
-                windowPlanes.Add(item);
+                Planes.Add(item);
+                PlaceObject(item);
+            }
+            if (item.classification == planeClassification[5])
+            {
+                Planes.Add(item);
                 PlaceObject(item);
             }
         }
@@ -79,12 +87,12 @@ public class PlaneSetup : MonoBehaviour
     {
         if(placePrefab)
         {
+            index = Random.Range(0, objectToPlace.Length);
+
             Vector3 planeCenter = plane.center;
             Quaternion planeRotation = plane.transform.rotation;
 
-            objectToPlace.SetActive(true);
-            objectToPlace.transform.position = planeCenter;
-            objectToPlace.transform.rotation = planeRotation;
+            Instantiate(objectToPlace[index], planeCenter, planeRotation);
         }
     }
 }
