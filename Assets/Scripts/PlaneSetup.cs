@@ -28,6 +28,9 @@ public class PlaneSetup : MonoBehaviour
     //Int used to select an object from the array in the PlaceObject function
     private int index;
 
+    public bool debugInst;
+    public Transform debugTr;
+
     //Function that gets called on enable, calls the setupplanes function
     private void OnEnable()
     {
@@ -93,7 +96,21 @@ public class PlaneSetup : MonoBehaviour
             Vector3 planeCenter = plane.center;
             Quaternion planeRotation = plane.transform.rotation;
 
-            Instantiate(objectToPlace[index], planeCenter, planeRotation);
+            objectToPlace[0].SetActive(true);
+            objectToPlace[0].transform.position = planeCenter;
+            objectToPlace[0].transform.rotation = planeRotation;
+
+            //Instantiate(objectToPlace[index], planeCenter, planeRotation);
+        }
+    }
+
+    private void Update()
+    {
+        if(debugInst)
+        {
+            objectToPlace[0].SetActive(true);
+            objectToPlace[0].transform.position = debugTr.position;
+            objectToPlace[0].transform.rotation = debugTr.rotation;
         }
     }
 }

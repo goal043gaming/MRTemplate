@@ -12,8 +12,14 @@ public class WindowScript : MonoBehaviour
     {
         transform.LookAt(new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
         cam = GetComponentInChildren<FakeCam>();
+        StartCoroutine(AdjustPosition());
     }
 
+    IEnumerator AdjustPosition()
+    {
+        yield return new WaitForSeconds(1f);
+        transform.position = cam.DoorTransform.position;
+    }
     //Update function consistently updates the variable inside fakecam to the current transform of this object
     void Update()
     {
