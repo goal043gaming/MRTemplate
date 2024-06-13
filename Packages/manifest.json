@@ -1,6 +1,5 @@
 {
   "dependencies": {
-	      "com.goal043.goal043lib": "https://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@github.com/goal043gaming/Goal043Lib.git",
     "com.unity.collab-proxy": "2.3.1",
     "com.unity.feature.development": "1.0.1",
     "com.unity.inputsystem": "1.7.0",
