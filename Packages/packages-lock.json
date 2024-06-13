@@ -1,15 +1,5 @@
 {
   "dependencies": {
-    "com.goal043.goal043lib": {
-      "version": "https://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@github.com/goal043gaming/Goal043Lib.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.textmeshpro": "3.0.6",
-        "com.unity.localization": "1.3.2"
-      },
-      "hash": "ef4d51dfbdba67dca2c5e86195f345d6c5f5a625"
-    },
     "com.unity.addressables": {
       "version": "1.21.18",
       "depth": 2,
