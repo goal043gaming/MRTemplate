@@ -2299,6 +2299,8 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -5581690291832720760, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftRayInteractor: {fileID: 1109407790274764224}
+  rightRayInteractor: {fileID: 1992440411}
 --- !u!1 &590875568
 GameObject:
   m_ObjectHideFlags: 0
@@ -9755,7 +9757,7 @@ MonoBehaviour:
   uiAss: {fileID: 591178771}
   UI: {fileID: 1382528628}
   rotate: {fileID: 1941101220}
-  objective: {fileID: 0}
+  objective: {fileID: 2047197444}
   hapIntensity: 0.479
   hapDuration: 2.5
 --- !u!224 &1261073044793567346

@@ -8399,6 +8399,8 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -5581690291832720760, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftRayInteractor: {fileID: 1109407790274764225}
+  rightRayInteractor: {fileID: 1109407790274764224}
 --- !u!1 &854671584
 GameObject:
   m_ObjectHideFlags: 0
