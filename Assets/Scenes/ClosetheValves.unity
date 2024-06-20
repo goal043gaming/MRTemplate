@@ -3742,7 +3742,6 @@ MonoBehaviour:
   linkedObject: {fileID: 487018002}
   curTarget: {fileID: 0}
   disableTimer: 0.1
-  flowHandler: {fileID: 1569558103}
 --- !u!65 &619848828
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5623,7 +5622,6 @@ MonoBehaviour:
   linkedObject: {fileID: 1662247818}
   curTarget: {fileID: 0}
   disableTimer: 0.1
-  flowHandler: {fileID: 1569558103}
 --- !u!65 &963583842
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13181,7 +13179,6 @@ MonoBehaviour:
   linkedObject: {fileID: 1840662915}
   curTarget: {fileID: 0}
   disableTimer: 0.1
-  flowHandler: {fileID: 1569558103}
 --- !u!54 &1370718678
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15845,7 +15842,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1435055189130710449, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_RotationFollowMode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3032334164665928404, guid: 66d40221d132d04499855da9ce315f20, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23667,6 +23664,10 @@ MonoBehaviour:
   uiNumber: {fileID: 0}
   uiAss: {fileID: 0}
   UI: {fileID: 0}
+  rotate: {fileID: 0}
+  objective: {fileID: 0}
+  hapIntensity: 0
+  hapDuration: 0
 --- !u!114 &1109407790274764228
 MonoBehaviour:
   m_ObjectHideFlags: 0

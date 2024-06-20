@@ -44,10 +44,23 @@ public class SpawnHoles : MonoBehaviour
     //RotateOnEnable script that gets used in the SpawnPrefab function
     [SerializeField] RotateOnEnable rotate;
 
+    [SerializeField] ObjectiveHandler objective;
+
+    [Header("Haptic Feedback")]
+    //Floats used in order to give haptic feedback through the controllers
+    [SerializeField][Range(0, 1)] float hapIntensity;
+    [SerializeField] float hapDuration;
+
     //Adds eventlistener to the linked ray interactor for calling the Spawnprefab function
     void Start()
     {
         rayInteractor.selectEntered.AddListener(SpawnPrefab);
+        TriggerHaptic(rayInteractor.xrController);
+        objective.UpdateText("Plaats de objecten");
+    }
+    private void Update()
+    {
+        UpdateUI();
     }
 
     //Function that gets called by the select entered event from the linked rayinteractor
@@ -105,7 +118,15 @@ public class SpawnHoles : MonoBehaviour
     private void UpdateUI()
     {
         objHandler = prefabToSpawn[index].GetComponent<ObjectHandler>();
-        uiAss.text = objHandler.ObjectDescription;
-        uiNumber.text = "Objecten om te plaatsen:" + index;
+        uiAss.text = objHandler.ObjectName + "," + objHandler.ObjectDescription;
+        //uiNumber.text = "Objecten om te plaatsen:" + index;
+    }
+
+    public void TriggerHaptic(XRBaseController controller)
+    {
+        if (hapIntensity > 0)
+        {
+            controller.SendHapticImpulse(hapIntensity, hapDuration);
+        }
     }
 }

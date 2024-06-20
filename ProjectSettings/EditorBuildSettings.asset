@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 6764ddcd6a6a790499b766cbd89ed102
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/BalltpleChoice.unity
     guid: 649418fc19cdc094ca331a5eaac5deb3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ClosetheValves.unity
     guid: f35007cdd2bd00545bd707ef8a80c6a4
   - enabled: 0
@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/FloodingScene.unity
     guid: 89f2ffd32b5dd594f8b0ee195e5897a3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AnotherDimension.unity
     guid: 050c38c2d5ca73c4d8a6110279b73ea8
   m_configObjects:
