@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 using UnityEngine.InputSystem;
 
 public class EnableUI : MonoBehaviour
@@ -11,6 +14,9 @@ public class EnableUI : MonoBehaviour
     //Input actions to disable and enable, uses input from default button set
     [SerializeField] InputActionProperty inputEnable;
     [SerializeField] InputActionProperty inputDisable;
+
+    [SerializeField] XRRayInteractor leftRayInteractor;
+    [SerializeField] XRRayInteractor rightRayInteractor;
 
     //bool checking if the menu is already active
     private bool isEnabled = false;
@@ -34,6 +40,8 @@ public class EnableUI : MonoBehaviour
         {
             uiToEnable.SetActive(true);
             isEnabled = true;
+            leftRayInteractor.enableUIInteraction = true;
+            rightRayInteractor.enableUIInteraction = true;
         }
     }
 
@@ -43,6 +51,8 @@ public class EnableUI : MonoBehaviour
         {
             uiToEnable.SetActive(false);
             isEnabled = false;
+            leftRayInteractor.enableUIInteraction = false;
+            rightRayInteractor.enableUIInteraction = false;
         }
     }
 }

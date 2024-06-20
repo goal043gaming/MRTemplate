@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
@@ -40,6 +43,9 @@ public class QuestionManager : MonoBehaviour
     //UI Gameobject that gets enabled if all of the questions have been answered
     [SerializeField] GameObject nextScene;
 
+    [SerializeField] XRRayInteractor leftRayInteractor;
+    [SerializeField] XRRayInteractor rightRayInteractor;
+
     //Function that gets called by the Correcto ienumerator, this happens once a question has been answered succesfully
     //It changes the current question to the one provided by qaholder, plays the sound effect, calls the SetAnswers function and the linked ballspawner Spawnprefab function and updated the objectives
     //If the questions are all answered the function enables the nextscene gameobject
@@ -48,6 +54,8 @@ public class QuestionManager : MonoBehaviour
         if(currentQuestionIndex >= qAHolder.Count)
         {
             nextScene.SetActive(true);
+            leftRayInteractor.enableUIInteraction = true;
+            rightRayInteractor.enableUIInteraction = true;
             return;
         }
 

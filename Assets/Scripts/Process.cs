@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using TMPro;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,6 +46,9 @@ public class Process : MonoBehaviour
     //Debug code to test functionality without VR Input
     public bool debug;
     public bool lastCheck;
+
+    [SerializeField] XRRayInteractor leftRayInteractor;
+    [SerializeField] XRRayInteractor rightRayInteractor;
 
     //Function that gets called by the placementhandler script once all of the required objects have been placed
     //Function selects the current step, linked object if the index is less than the total amount
@@ -101,6 +107,8 @@ public class Process : MonoBehaviour
         else
         {
             nextScene.SetActive(true);
+            leftRayInteractor.enableUIInteraction = true;
+            rightRayInteractor.enableUIInteraction = true;
             print("End of the process");
         }
     }

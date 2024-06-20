@@ -22380,6 +22380,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c943ffac0980d428dbccf78d8566f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftRayInteractor: {fileID: 1109407790274764225}
+  rightRayInteractor: {fileID: 1109407790274764224}
 --- !u!222 &1616024793
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34963,6 +34965,8 @@ MonoBehaviour:
   nextScene: {fileID: 2092464757}
   debug: 0
   lastCheck: 0
+  leftRayInteractor: {fileID: 1109407790274764225}
+  rightRayInteractor: {fileID: 1109407790274764224}
 --- !u!1 &12568158438288608
 GameObject:
   m_ObjectHideFlags: 0

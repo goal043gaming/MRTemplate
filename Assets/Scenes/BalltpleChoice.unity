@@ -1460,6 +1460,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7432980434244791046}
     - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: leftRayInteractor
+      value: 
+      objectReference: {fileID: 1109407790274764224}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
+      propertyPath: rightRayInteractor
+      value: 
+      objectReference: {fileID: 1992440411}
+    - target: {fileID: 2358882721411681660, guid: 12ce905c1bd9c70459c3cab6f9730c0e, type: 3}
       propertyPath: qAHolder.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -3875,6 +3883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c943ffac0980d428dbccf78d8566f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftRayInteractor: {fileID: 1109407790274764224}
+  rightRayInteractor: {fileID: 1992440411}
 --- !u!1001 &983036590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8899,6 +8909,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953876055}
   m_CullTransparentMesh: 1
+--- !u!114 &1992440411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7044644748622458103, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+  m_PrefabInstance: {fileID: 1109407790274764219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2001866392 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4941219564456579801, guid: dc067c577ec1b854684d789b6e727cc0, type: 3}
@@ -9629,6 +9650,10 @@ PrefabInstance:
     - target: {fileID: 6880324381277293900, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7094797105234538620, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
+      propertyPath: m_BlockUIOnInteractableSelection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8527362242434426454, guid: 8b4d02b4e05af714dab2a12548a310f8, type: 3}
       propertyPath: m_TagString
