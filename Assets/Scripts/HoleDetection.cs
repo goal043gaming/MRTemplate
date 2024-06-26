@@ -32,9 +32,9 @@ public class HoleDetection : MonoBehaviour
             if (collision.gameObject.GetComponent<BallBoosters>().boosterTriggered == true)
             {
                 text.gameObject.SetActive(true);
-                StartCoroutine(TextTimer(1));
+                StartCoroutine(TextTimer(2));
                 pointsToAdd = startingPoints * collision.gameObject.GetComponent<BallBoosters>().boosterAmount;
-                text.text = pointsToAdd.ToString();
+                text.text = "Dat is correct!";
                 Destroy(collision.gameObject);
 
                 answerManager.Answer();
@@ -42,8 +42,8 @@ public class HoleDetection : MonoBehaviour
             else
             {
                 text.gameObject.SetActive(true);
-                StartCoroutine(TextTimer(1));
-                text.text = startingPoints.ToString();
+                StartCoroutine(TextTimer(2));
+                text.text = "Dat is correct!";
                 Destroy(collision.gameObject);
 
                 answerManager.Answer();
@@ -54,8 +54,8 @@ public class HoleDetection : MonoBehaviour
         if(collision.transform.tag == "Throwable" && !answerManager.isCorrect)
         {
             text.gameObject.SetActive(true);
-            StartCoroutine(TextTimer(1));
-            text.text = "0";
+            StartCoroutine(TextTimer(2));
+            text.text = "Dat is fout!";
             Destroy(collision.gameObject);
 
             answerManager.Answer();
